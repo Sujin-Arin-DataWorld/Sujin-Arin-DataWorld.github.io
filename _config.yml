@@ -1,3 +1,10 @@
+title: "Sujin's Portfolio"  # 🌟 사이트 제목
+description: "Welcome to my portfolio website!"  # 🌟 사이트 설명
+url: "https://Sujin-Arin-DataWorld.github.io"  # 🌍 사이트 URL
+author:
+  name: "Sujin-Arin Park"
+  email: sujin.arin.park@gmail.com
+
 plugins:
   - jekyll-github-metadata
 
