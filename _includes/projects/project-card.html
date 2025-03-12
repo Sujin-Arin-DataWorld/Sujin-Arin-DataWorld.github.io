@@ -1,47 +1,40 @@
-<div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="{{ project_url }}" class="project-card" data-wow-delay=".15s">
-    <div class="card rounded-0 text-themed">
-      <!-- 프로젝트 썸네일 이미지에 그라데이션 오버레이 추가 -->
-      <div class="project-image">
-        <img src="{{ project.image }}" class="card-img-top" alt="{{ project.name }}" style="height: 220px; object-fit: cover;">
-        <div class="image-overlay" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6));"></div>
+<div class="wow animated fadeIn card project-card mb-4">
+  <a href="{{ project_url }}" class="text-decoration-none" {% if external %}target="_blank"{% endif %}>
+    <!-- 프로젝트 이미지 -->
+    {% if project_img %}
+    <div class="project-image position-relative">
+      <img src="{{ project_img }}" class="card-img-top" alt="{{ project_name }}" style="height: 200px; object-fit: cover;">
+      <div class="image-overlay position-absolute" style="top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6));"></div>
+    </div>
+    {% endif %}
+    
+    <div class="card-body">
+      <!-- 프로젝트 타입 배지 -->
+      {% if project_type == "remote" %}
+      <span class="badge badge-pill badge-primary position-absolute" style="top: 10px; right: 10px;">GitHub</span>
+      {% endif %}
+      
+      <!-- 프로젝트 제목 -->
+      <h5 class="card-title">{{ project_name }}</h5>
+      
+      <!-- 프로젝트 설명 -->
+      <p class="card-text">{{ project_desc }}</p>
+      
+      <!-- 기술 스택 배지 -->
+      <div class="mb-3">
+        {% for tool in project_tools %}
+        <span class="badge badge-pill badge-light text-dark mr-2 mb-2 py-1 px-2" style="border: 1px solid #ddd;">{{ tool }}</span>
+        {% endfor %}
       </div>
       
-      <div class="card-body position-relative">
-        <!-- 프로젝트 아이콘 -->
-        <div class="project-icon bg-themed text-light rounded-circle position-absolute" 
-             style="width: 50px; height: 50px; top: -25px; right: 25px; display: flex; align-items: center; justify-content: center;">
-          {% if project.type == "python" %}
-            <i class="fab fa-python fa-lg"></i>
-          {% elsif project.type == "data" %}
-            <i class="fas fa-chart-bar fa-lg"></i>
-          {% elsif project.type == "ml" %}
-            <i class="fas fa-brain fa-lg"></i>
-          {% else %}
-            <i class="fas fa-code fa-lg"></i>
-          {% endif %}
-        </div>
-        
-        <!-- 프로젝트 제목 -->
-        <h5 class="card-title">{{ project.name }}</h5>
-        
-        <!-- 프로젝트 설명 -->
-        <p class="card-text">{{ project.description }}</p>
-        
-        <!-- 기술 스택 배지 -->
-        <div class="tools-badges mb-3">
-          {% for tool in project.tools %}
-          <span class="badge badge-pill text-themed" style="background-color: rgba(var(--primary-color-rgb), 0.1); margin-right: 5px; margin-bottom: 5px; padding: 8px 15px;">
-            {{ tool }}
-          </span>
-          {% endfor %}
-        </div>
-        
-        <!-- 더 알아보기 링크 -->
-        <div class="learn-more text-right">
-          <small class="text-muted">자세히 보기 <i class="fas fa-arrow-right ml-1"></i></small>
-        </div>
-      </div>
+      <!-- 더 알아보기 링크 -->
+      <small class="text-muted">
+        {% if external %}
+        <i class="fas fa-external-link-alt mr-1"></i> 외부 링크
+        {% else %}
+        더 알아보기 <i class="fas fa-arrow-right ml-1"></i>
+        {% endif %}
+      </small>
     </div>
   </a>
 </div>
