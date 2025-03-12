@@ -1,59 +1,89 @@
+<div class="container mt-5">
+  <!-- 프로젝트 소개 섹션 -->
+  <div class="text-center mb-5">
+    <h2 class="display-4 mb-3">My Projects</h2>
+    <p class="lead text-muted">데이터 분석 및 머신러닝 프로젝트 모음입니다</p>
+    <hr class="my-4 w-25 mx-auto">
+  </div>
 
-<div class="card-columns m-3 mt-5">
+  <!-- 프로젝트 필터링 버튼 (선택 사항) -->
+  <div class="text-center mb-4">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-outline-primary active" data-filter="all">All</button>
+      <button type="button" class="btn btn-outline-primary" data-filter="data">Data Analysis</button>
+      <button type="button" class="btn btn-outline-primary" data-filter="ml">Machine Learning</button>
+      <button type="button" class="btn btn-outline-primary" data-filter="viz">Visualization</button>
+    </div>
+  </div>
 
-  <!-- Remote Projects -->
-  {% for remote_project in page.remote_projects %}
-
-    {%- for repo in site.github.public_repositories -%}
-
-      {%- if remote_project == repo.name -%}
-
-        {%- assign project = repo -%}
-        {%- assign words = project.name | split: '-' -%}
-        
-        {%- capture titlecase -%}
-          {%- for word in words -%}
-            {{ word | capitalize | append: ' ' }}
-          {%- endfor -%}
-        {%- endcapture -%}
-
-        {%- assign project_type  = "remote" -%}
-        {%- assign project_id    = project.name -%}
-        {%- assign project_img   = false -%}
-        {%- assign project_name  = titlecase | strip -%}
-        {%- assign project_desc  = project.description -%}
-        {%- assign project_url   = project.html_url -%}
-        {%- assign project_tools = project.topics -%}
-        {%- assign external      = true -%}
-
-        {% include projects/project-card.html %}
-
+  <!-- 프로젝트 카드 레이아웃 -->
+  <div class="row">
+    <!-- Remote Projects -->
+    {% for remote_project in page.remote_projects %}
+      {%- for repo in site.github.public_repositories -%}
+        {%- if remote_project == repo.name -%}
+          {%- assign project = repo -%}
+          {%- assign words = project.name | split: '-' -%}
+          
+          {%- capture titlecase -%}
+            {%- for word in words -%}
+              {{ word | capitalize | append: ' ' }}
+            {%- endfor -%}
+          {%- endcapture -%}
+          {%- assign project_type  = "remote" -%}
+          {%- assign project_id    = project.name -%}
+          {%- assign project_img   = false -%}
+          {%- assign project_name  = titlecase | strip -%}
+          {%- assign project_desc  = project.description -%}
+          {%- assign project_url   = project.html_url -%}
+          {%- assign project_tools = project.topics -%}
+          {%- assign external      = true -%}
+          <div class="col-md-6 col-lg-4 mb-4">
+            {% include projects/project-card.html %}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    {% endfor %}
+    
+    <!-- Local Projects -->
+    {% for project in site.projects %}
+      {%- assign project_type  = "local" -%}
+      {%- assign project_id    = project.name | slugify -%}
+      {%- assign project_img   = project.image -%}
+      {%- assign project_name  = project.name -%}
+      {%- assign project_desc  = project.description -%}
+      {%- assign project_tools = project.tools -%}
+      {%- if project.external_url -%}
+        {%- assign project_url = project.external_url -%}
+        {%- assign external    = true -%}
+      {%- else -%}
+        {%- assign project_url = project.url | relative_url -%}
+        {%- assign external    = false -%}
       {%- endif -%}
-
-    {%- endfor -%}
-
-  {% endfor %}
-
-  <!-- Local Projects -->
-  {% for project in site.projects %}
-
-    {%- assign project_type  = "local" -%}
-    {%- assign project_id    = project.name | slugify -%}
-    {%- assign project_img   = project.image -%}
-    {%- assign project_name  = project.name -%}
-    {%- assign project_desc  = project.description -%}
-    {%- assign project_tools = project.tools -%}
-
-    {%- if project.external_url -%}
-      {%- assign project_url = project.external_url -%}
-      {%- assign external    = true -%}
-    {%- else -%}
-      {%- assign project_url = project.url | relative_url -%}
-      {%- assign external    = false -%}
-    {%- endif -%}
-
-    {% include projects/project-card.html %}
-
-  {% endfor %}
-
+      <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="{{ project.category | default: 'all' }}">
+        {% include projects/project-card.html %}
+      </div>
+    {% endfor %}
+  </div>
 </div>
+
+<!-- 필터링 스크립트 (선택 사항) -->
+<script>
+  $(document).ready(function() {
+    $('[data-filter]').on('click', function() {
+      var filterValue = $(this).attr('data-filter');
+      
+      // 버튼 활성화 상태 변경
+      $('[data-filter]').removeClass('active');
+      $(this).addClass('active');
+      
+      // 프로젝트 필터링
+      if (filterValue === 'all') {
+        $('.project-item').show();
+      } else {
+        $('.project-item').hide();
+        $('.project-item[data-category="' + filterValue + '"]').show();
+      }
+    });
+  });
+</script>
