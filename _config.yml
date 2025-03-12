@@ -18,19 +18,26 @@ plugins:
 
 
 ### Navbar Settings ###
-nav_exclude:                                            # The following paths are excluded from navbar
-  - pages/tags.html
-  - pages/404.html
-  - pages/index.md
-  - documentation/partials/**                           # For Documentation Only
-  - pages/blog.html
-  - elements.html
-  - docs.html
-  - blog
-  - elements
-  - docs
-  - blog/tags                     # For Documentation Only
+### TEST COMMENT - DELETE LATER ###
+nav_exclude:                                            
+  - /pages/tags.html
+  - /pages/404.html
+  - /pages/index.md
+  - /documentation/partials/**                           
+  - /pages/blog.html
+  - /elements.html
+  - /docs.html
+  - /blog
+  - /elements
+  - /docs
+  - /blog/tags  # For Documentation Only
 
+### Navbar Settings ###
+navbar_links:
+  - title: About Me
+    url: /about/
+  - title: Projects 
+    url: /projects/
 
 ### Author Info ###
 author:
