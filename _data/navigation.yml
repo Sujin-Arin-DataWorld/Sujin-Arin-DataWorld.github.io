@@ -1,0 +1,7 @@
+- name: About Me
+  link: /about/
+  weight: 1
+
+- name: Projects
+  link: /projects/
+  weight: 2
