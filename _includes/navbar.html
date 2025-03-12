@@ -5,9 +5,9 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
-      <!-- 간소화된 네비게이션 - About Me와 Projects만 표시 -->
-      <a class="nav-item nav-link {% if page.url contains '/about/' %}active{% endif %}" href="{{ site.baseurl }}/about/">About Me</a>
-      <a class="nav-item nav-link {% if page.url contains '/projects/' %}active{% endif %}" href="{{ site.baseurl }}/projects/">Projects</a>
+      {% for item in site.data.navigation %}
+        <a class="nav-item nav-link {% if page.url contains item.link %}active{% endif %}" href="{{ site.baseurl }}{{ item.link }}">{{ item.name }}</a>
+      {% endfor %}
       <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
     </div>
   </div>
