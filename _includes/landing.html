@@ -1,15 +1,50 @@
-<div class="row justify-content-center align-items-center p-4">
-  <div class="col-lg-4 col-md-6 text-center mt-4">
-
-    <!-- Fine Circle Responsive Image -->
-    <div id="container" class="my-2">
-      <div id="dummy"></div>
-      <div id="element">
-        <img src="{{ site.author.image }}" alt="{{ site.title }}" class="circle-image wow animated zoomIn" data-wow-delay=".1s">
+<!-- 히어로 섹션 -->
+<div style="background: linear-gradient(135deg, #4568dc, #b06ab3); padding: 80px 0; text-align: center; color: white; border-radius: 5px; margin-bottom: 50px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 text-center">
+        <!-- 원형 이미지 유지 -->
+        <div id="container" class="my-2">
+          <div id="dummy"></div>
+          <div id="element">
+            <img src="{{ site.author.image }}" alt="{{ site.title }}" class="circle-image wow animated zoomIn" data-wow-delay=".1s" style="border: 3px solid white;">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-6">
+        <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 20px;" class="wow animated fadeInUp" data-wow-delay=".1s">Turning Data into Actionable Insights</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 30px;" class="wow animated fadeInUp" data-wow-delay=".15s">
+          Financial Data Analyst specializing in Python, SQL, Machine Learning & Data Visualization
+        </p>
+        <div class="wow animated fadeInUp" data-wow-delay=".2s">
+          <a href="{{ site.baseurl }}/projects/" class="btn btn-light btn-lg mr-3" style="margin-right: 15px;">View Projects</a>
+          <a href="{{ site.baseurl }}/about/" class="btn btn-outline-light btn-lg">About Me</a>
+        </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <p class="text-muted wow animated slideInUp" data-wow-delay=".15s">{{ site.description }}</p>
-
+<!-- 프로젝트 섹션 -->
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">Featured Projects</h2>
+  <div class="row">
+    {% for project in site.projects limit:4 %}
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="{{ project.image }}" class="card-img-top" alt="{{ project.name }}" style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">{{ project.name }}</h5>
+          <p class="card-text">{{ project.description }}</p>
+          <p>
+            {% for tool in project.tools %}
+            <span class="badge badge-pill badge-primary">{{ tool }}</span>
+            {% endfor %}
+          </p>
+          <a href="{{ project.url | relative_url }}" class="btn btn-outline-primary">자세히 보기</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
 </div>
