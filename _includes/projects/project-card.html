@@ -1,21 +1,47 @@
 <div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="{{ project_url }}" class="project card text-themed" {%- if external and site.open_new_tab -%} target="_blank" {%- endif -%}>
-    {%- if project_img -%}
-    <img id="{{ project_id }}-img" class="card-img-top" src="{{ project_img }}" alt="{{ project_name }}" />
-    {%- endif -%}
-    <div class="card-body">
-      <h5 id="{{ project_id }}-name" class="card-title">
-          {%- if project_type == "remote" -%}
-          <i class="fab fa-github" data-toggle="tooltip" data-placement="bottom" data-delay="250" title="GitHub Repository"></i> |&nbsp;
-          {%- endif -%}
-        {{ project_name }}
-      </h5>
-      <p id="{{ project_id }}-desc" class="card-text">{{ project_desc }}</p>
-      <p id="{{ project_id }}-tools" class="card-text">
-        {%- for tool in project_tools -%}
-        <span class="badge badge-pill text-primary border border-primary ml-1">{{ tool }}</span>
-        {%- endfor -%}
-      </p>
+  <a href="{{ project_url }}" class="project-card" data-wow-delay=".15s">
+    <div class="card rounded-0 text-themed">
+      <!-- 프로젝트 썸네일 이미지에 그라데이션 오버레이 추가 -->
+      <div class="project-image">
+        <img src="{{ project.image }}" class="card-img-top" alt="{{ project.name }}" style="height: 220px; object-fit: cover;">
+        <div class="image-overlay" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6));"></div>
+      </div>
+      
+      <div class="card-body position-relative">
+        <!-- 프로젝트 아이콘 -->
+        <div class="project-icon bg-themed text-light rounded-circle position-absolute" 
+             style="width: 50px; height: 50px; top: -25px; right: 25px; display: flex; align-items: center; justify-content: center;">
+          {% if project.type == "python" %}
+            <i class="fab fa-python fa-lg"></i>
+          {% elsif project.type == "data" %}
+            <i class="fas fa-chart-bar fa-lg"></i>
+          {% elsif project.type == "ml" %}
+            <i class="fas fa-brain fa-lg"></i>
+          {% else %}
+            <i class="fas fa-code fa-lg"></i>
+          {% endif %}
+        </div>
+        
+        <!-- 프로젝트 제목 -->
+        <h5 class="card-title">{{ project.name }}</h5>
+        
+        <!-- 프로젝트 설명 -->
+        <p class="card-text">{{ project.description }}</p>
+        
+        <!-- 기술 스택 배지 -->
+        <div class="tools-badges mb-3">
+          {% for tool in project.tools %}
+          <span class="badge badge-pill text-themed" style="background-color: rgba(var(--primary-color-rgb), 0.1); margin-right: 5px; margin-bottom: 5px; padding: 8px 15px;">
+            {{ tool }}
+          </span>
+          {% endfor %}
+        </div>
+        
+        <!-- 더 알아보기 링크 -->
+        <div class="learn-more text-right">
+          <small class="text-muted">자세히 보기 <i class="fas fa-arrow-right ml-1"></i></small>
+        </div>
+      </div>
     </div>
   </a>
 </div>
