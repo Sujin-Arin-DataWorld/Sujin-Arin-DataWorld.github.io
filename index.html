@@ -2,49 +2,15 @@
 layout: default
 ---
 
-<!-- 히어로 섹션 -->
-<div class="hero-section" style="background: linear-gradient(135deg, #4568dc, #b06ab3); padding: 80px 0; text-align: center; color: white; border-radius: 5px; margin-bottom: 50px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2">
-        <h1 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 20px;">Turning Data into Actionable Insights</h1>
-        <p style="font-size: 1.3rem; margin-bottom: 30px;">
-          Financial Data Analyst specializing in Python, SQL, Machine Learning & Data Visualization
-        </p>
-        <div>
-          <a href="./projects/" class="btn btn-light btn-lg mr-3" style="margin-right: 15px;">View Projects</a>
-          <a href="./about-me/" class="btn btn-outline-light btn-lg">About Me</a>
-        </div>
-      </div>
+<div style="background: linear-gradient(135deg, #4568dc, #b06ab3); padding: 80px 0; text-align: center; color: white; border-radius: 5px; margin-bottom: 50px;">
+  <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+    <h1 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 20px;">Turning Data into Actionable Insights</h1>
+    <p style="font-size: 1.3rem; margin-bottom: 30px;">
+      Financial Data Analyst specializing in Python, SQL, Machine Learning & Data Visualization
+    </p>
+    <div>
+      <a href="./projects/" class="btn btn-light btn-lg" style="margin-right: 15px;">View Projects</a>
+      <a href="./about/" class="btn btn-outline-light btn-lg">About Me</a>
     </div>
-  </div>
-</div>
-
-<!-- 프로젝트 섹션 -->
-<div class="container">
-  <h2 class="mb-4">Featured Projects</h2>
-  
-  <div class="row">
-    {% for project in site.projects limit:4 %}
-    <div class="col-md-6 mb-4">
-      <div class="card h-100">
-        <img class="card-img-top" src="{{ project.image }}" alt="{{ project.name }}" style="height: 200px; object-fit: cover;">
-        <div class="card-body">
-          <h5 class="card-title">{{ project.name }}</h5>
-          <p class="card-text">{{ project.description }}</p>
-          <p>
-            {% for tool in project.tools %}
-            <span class="badge badge-pill badge-primary">{{ tool }}</span>
-            {% endfor %}
-          </p>
-          <a href="{{ project.url | relative_url }}" class="btn btn-outline-primary">Learn More</a>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-  
-  <div class="text-center mt-4 mb-5">
-    <a href="./projects/" class="btn btn-primary">View All Projects</a>
   </div>
 </div>
