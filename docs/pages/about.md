@@ -86,14 +86,14 @@ weight: 1
     <p>I'm always open to discussing new projects, data challenges, or opportunities to collaborate.</p>
     <p>Feel free to reach out via email or connect with me on LinkedIn and GitHub.</p>
     <p>
-      <a class="btn btn-primary" href="mailto:{{ site.author.email }}">
+      <a class="btn btn-primary" href="mailto:sujin.arin.park@gmail.com">
         <i class="fas fa-envelope"></i> Email Me
       </a>
-      <a class="btn btn-dark" href="https://github.com/{{ site.author.github }}">
+      <a class="btn btn-dark" href="https://github.com/Sujin-Arin-DataWorld">
         <i class="fab fa-github"></i> GitHub
       </a>
       {% if site.author.linkedin %}
-      <a class="btn btn-info" href="https://www.linkedin.com/in/{{ site.author.linkedin }}">
+      <a class="btn btn-info" href="https://www.linkedin.com/in/sujin-arin-park/">
         <i class="fab fa-linkedin"></i> LinkedIn
       </a>
       {% endif %}
