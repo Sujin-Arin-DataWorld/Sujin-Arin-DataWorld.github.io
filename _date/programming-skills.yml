@@ -1,0 +1,27 @@
+- name: Python
+  percentage: 90
+  color: success
+
+- name: SQL
+  percentage: 85
+  color: info
+
+- name: Excel
+  percentage: 95
+  color: primary
+
+- name: API Integration
+  percentage: 80
+  color: warning
+
+- name: Machine Learning
+  percentage: 85
+  color: danger
+
+- name: Power BI
+  percentage: 90
+  color: secondary
+
+- name: Data Visualization
+  percentage: 90
+  color: info
