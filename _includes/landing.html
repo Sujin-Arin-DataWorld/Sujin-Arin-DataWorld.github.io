@@ -311,405 +311,176 @@
     </div>
   </div>
 </div>
-
-<div class="timeline-item timeline-inverted">
-      <div class="timeline-badge" style="background: linear-gradient(135deg, #5665E9, #A271F8); box-shadow: 0 5px 10px rgba(0,0,0,0.1);">
-        <i class="fas fa-graduation-cap"></i>
-      </div>
-      <div class="timeline-panel" style="background-color: var(--card-bg); border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-radius: 12px;">
-        <div class="timeline-heading">
-          <h5 style="color: var(--text-primary); font-weight: 600;">Completed Advanced TensorFlow Course</h5>
-          <p><small style="color: var(--text-muted);"><i class="fas fa-clock"></i> 1 month ago</small></p>
-        </div>
-        <div class="timeline-body">
-          <p style="color: var(--text-secondary);">Enhanced modeling capabilities by completing an advanced course on deep learning model development and optimization.</p>
-        </div>
+<!-- 최근 활동 타임라인 - 수정된 버전 -->
+<div class="container mt-5 mb-5 fade-in-element">
+  <div class="section-header text-center mb-5">
+    <h2 class="section-title" style="font-weight: 700; color: var(--text-primary); margin-bottom: 15px;">Recent Activities</h2>
+    <div class="section-divider" style="width: 70px; height: 4px; background: linear-gradient(90deg, #5665E9, #A271F8); margin: 0 auto;"></div>
+  </div>
+  
+  <!-- 새로운 타임라인 구조 -->
+  <div class="timeline-container">
+    <!-- 타임라인 아이템 1 -->
+    <div class="timeline-block">
+      <div class="timeline-dot" style="background: linear-gradient(135deg, #5665E9, #A271F8);"></div>
+      <div class="timeline-content" style="background-color: var(--card-bg); color: var(--text-primary);">
+        <h5 style="font-weight: 600; color: var(--text-primary);">Started Financial Sentiment Analysis Project</h5>
+        <span class="timeline-date"><i class="fas fa-clock mr-1"></i> 2 weeks ago</span>
+        <p style="color: var(--text-secondary);">Initiated a financial market sentiment analysis project using news articles and social media data.</p>
       </div>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-badge" style="background: linear-gradient(135deg, #5665E9, #A271F8); box-shadow: 0 5px 10px rgba(0,0,0,0.1);">
-        <i class="fas fa-chart-bar"></i>
+    
+    <!-- 타임라인 아이템 2 -->
+    <div class="timeline-block">
+      <div class="timeline-dot" style="background: linear-gradient(135deg, #5665E9, #A271F8);"></div>
+      <div class="timeline-content" style="background-color: var(--card-bg); color: var(--text-primary);">
+        <h5 style="font-weight: 600; color: var(--text-primary);">Completed Advanced TensorFlow Course</h5>
+        <span class="timeline-date"><i class="fas fa-clock mr-1"></i> 1 month ago</span>
+        <p style="color: var(--text-secondary);">Enhanced modeling capabilities by completing an advanced course on deep learning model development and optimization.</p>
       </div>
-      <div class="timeline-panel" style="background-color: var(--card-bg); border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-radius: 12px;">
-        <div class="timeline-heading">
-          <h5 style="color: var(--text-primary); font-weight: 600;">Built Interactive Dashboard for Financial Data</h5>
-          <p><small style="color: var(--text-muted);"><i class="fas fa-clock"></i> 3 months ago</small></p>
-        </div>
-        <div class="timeline-body">
-          <p style="color: var(--text-secondary);">Developed a comprehensive dashboard to visualize financial trends and enable data-driven investment decisions.</p>
-        </div>
+    </div>
+    
+    <!-- 타임라인 아이템 3 -->
+    <div class="timeline-block">
+      <div class="timeline-dot" style="background: linear-gradient(135deg, #5665E9, #A271F8);"></div>
+      <div class="timeline-content" style="background-color: var(--card-bg); color: var(--text-primary);">
+        <h5 style="font-weight: 600; color: var(--text-primary);">Built Interactive Dashboard for Financial Data</h5>
+        <span class="timeline-date"><i class="fas fa-clock mr-1"></i> 3 months ago</span>
+        <p style="color: var(--text-secondary);">Developed a comprehensive dashboard to visualize financial trends and enable data-driven investment decisions.</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-<!-- CSS 스타일 -->
+<!-- 새로운 타임라인 스타일 -->
 <style>
-/* 다크모드/라이트모드 변수 */
-:root {
-  --text-primary: #333;
-  --text-secondary: #555;
-  --text-muted: #6c757d;
-  --card-bg: white;
-  --bg-light: #f8f9fa;
-  --bg-pattern: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234361ee' fill-opacity='0.05'%3E%3Cpath d='M0 0h4v4H0V0zm8 0h4v4H8V0zm8 0h4v4h-4V0zM4 4h4v4H4V4zm8 0h4v4h-4V4zm-4 4h4v4H8V8zm8 0h4v4h-4V8zm-8 4h4v4H8v-4zm8 0h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
-  --tech-icon-filter: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-primary: #e1e1e1;
-    --text-secondary: #b8b8b8;
-    --text-muted: #939393;
-    --card-bg: #2d2d3a;
-    --bg-light: #1e1e2d;
-    --bg-pattern: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235665E9' fill-opacity='0.1'%3E%3Cpath d='M0 0h4v4H0V0zm8 0h4v4H8V0zm8 0h4v4h-4V0zM4 4h4v4H4V4zm8 0h4v4h-4V4zm-4 4h4v4H8V8zm8 0h4v4h-4V8zm-8 4h4v4H8v-4zm8 0h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
-    --tech-icon-filter: brightness(0.9) contrast(1.1);
-  }
-}
-
-/* 타임라인 스타일 */
-.timeline {
+/* 새로운 타임라인 스타일 */
+.timeline-container {
   position: relative;
-  padding: 20px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 0;
 }
-.timeline:before {
-  content: "";
+
+.timeline-container::after {
+  content: '';
   position: absolute;
+  width: 4px;
+  background: linear-gradient(to bottom, rgba(86, 101, 233, 0.3), rgba(162, 113, 248, 0.3));
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 3px;
-  margin-left: -1.5px;
-  background: linear-gradient(to bottom, rgba(86, 101, 233, 0.3), rgba(162, 113, 248, 0.3));
-  border-radius: 3px;
+  margin-left: -2px;
+  border-radius: 4px;
 }
-.timeline-item {
+
+.timeline-block {
+  padding: 10px 40px;
   position: relative;
-  margin-bottom: 50px;
+  width: 50%;
+  left: 0;
+  margin-bottom: 30px;
 }
-.timeline-badge {
-  position: absolute;
-  top: 16px;
+
+.timeline-block:nth-child(even) {
   left: 50%;
-  width: 50px;
-  height: 50px;
-  margin-left: -25px;
-  color: #fff;
+}
+
+.timeline-dot {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  background-color: #5665E9;
   border-radius: 50%;
-  text-align: center;
-  font-size: 1.4em;
-  line-height: 50px;
-  z-index: 100;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  top: 15px;
+  z-index: 1;
+  box-shadow: 0 0 0 4px rgba(86, 101, 233, 0.2);
   transition: all 0.3s ease;
 }
-.timeline-item:hover .timeline-badge {
-  transform: scale(1.1);
+
+.timeline-block:nth-child(odd) .timeline-dot {
+  right: -12px;
 }
-.timeline-panel {
-  float: left;
-  width: 46%;
+
+.timeline-block:nth-child(even) .timeline-dot {
+  left: -12px;
+}
+
+.timeline-content {
   padding: 20px;
   position: relative;
-}
-.timeline-panel:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-.timeline-inverted .timeline-panel {
-  float: right;
-}
-.timeline:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.timeline-heading h5 {
-  margin-bottom: 8px;
-}
-.timeline-panel:after {
+
+.timeline-content::after {
   content: '';
   position: absolute;
-  top: 20px;
-  right: -10px;
   width: 20px;
   height: 20px;
-  background-color: var(--card-bg);
+  top: 15px;
+  background-color: inherit;
   transform: rotate(45deg);
-  border-right: none;
-  border-top: none;
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.05);
 }
-.timeline-inverted .timeline-panel:after {
-  right: auto;
+
+.timeline-block:nth-child(odd) .timeline-content::after {
+  right: -10px;
+}
+
+.timeline-block:nth-child(even) .timeline-content::after {
   left: -10px;
-  box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-date {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  color: var(--text-muted);
+}
+
+.timeline-block:hover .timeline-dot {
+  transform: scale(1.3);
+}
+
+.timeline-block:hover .timeline-content {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* 반응형 타임라인 */
-@media (max-width: 767px) {
-  .timeline:before {
-    left: 40px;
-  }
-  .timeline-badge {
-    left: 40px;
-    margin-left: 0;
-  }
-  .timeline-panel {
-    width: calc(100% - 90px);
-    float: right;
-  }
-  .timeline-inverted .timeline-panel {
-    float: right;
-  }
-  .timeline-panel:after,
-  .timeline-inverted .timeline-panel:after {
-    left: -10px;
-    box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.05);
-  }
-}
-
-/* 추가 반응형 디자인 개선 */
-@media (max-width: 768px) {
-  /* 타이틀 폰트 사이즈 조정 */
-  .section-title {
-    font-size: 1.8rem !important;
+@media screen and (max-width: 768px) {
+  .timeline-container::after {
+    left: 31px;
   }
   
-  /* 카드 간격 및 패딩 조정 */
-  .card {
-    margin-bottom: 20px;
-  }
-  .card-body {
-    padding: 1.25rem;
-  }
-  
-  /* 서비스 카드 조정 */
-  .service-icon-container {
-    width: 60px !important;
-    height: 60px !important;
+  .timeline-block {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    left: 0 !important;
   }
   
-  /* 버튼 크기 및 간격 조정 */
-  .btn-lg {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  /* 더 작은 화면에서의 조정 */
-  .section-title {
-    font-size: 1.5rem !important;
+  .timeline-dot {
+    left: 17px !important;
+    right: auto !important;
   }
   
-  /* 히어로 섹션 텍스트 조정 */
-  [style*="font-size: 2.5rem"] {
-    font-size: 1.75rem !important;
+  .timeline-content::after {
+    left: -10px !important;
+    right: auto !important;
   }
-  [style*="font-size: 1.2rem"] {
-    font-size: 1rem !important;
-  }
-  
-  /* 숫자 성과 섹션 조정 */
-  .display-4 {
-    font-size: 2.5rem;
-  }
-  
-  /* 아이콘 크기 조정 */
-  .fa-2x {
-    font-size: 1.5em;
+}
+
+/* 다크모드에서 그림자 조정 */
+@media (prefers-color-scheme: dark) {
+  .timeline-content {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
   
-  /* 여백 조정 */
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
+  .timeline-block:hover .timeline-content {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   }
-  
-  /* 타임라인 추가 조정 */
-  .timeline-panel {
-    padding: 15px;
-  }
-}
-
-/* 섹션 전환 부드럽게 */
-.section-transition {
-  transition: all 0.5s ease;
-}
-
-/* 카드 호버 효과 강화 */
-.card {
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* 프로젝트 이미지 오버레이 호버 효과 */
-.project-image {
-  position: relative;
-  overflow: hidden;
-}
-.image-overlay {
-  transition: opacity 0.3s ease;
-}
-.project-card:hover .image-overlay {
-  opacity: 0.3;
-}
-
-/* 기술 스택 아이콘 호버 효과 */
-.tech-item {
-  transition: transform 0.3s;
-}
-.tech-item:hover {
-  transform: scale(1.15);
-}
-
-/* 페이드인 애니메이션 스타일 */
-.fade-in-element {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-in-element.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 섹션 구분 스타일 */
-.section-header {
-  margin-bottom: 3rem;
-}
-
-/* 서비스 카드 고급화 */
-.service-card {
-  overflow: hidden;
-  position: relative;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 60px;
-  height: 60px;
-  background-color: rgba(255,255,255,0.1);
-  border-radius: 50%;
-  z-index: 0;
-}
-.service-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
-}
-
-/* 역량 카드 효과 */
-.competency-card {
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.competency-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12) !important;
-}
-
-/* 인사이트 카드 효과 */
-.insight-card {
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.insight-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12) !important;
-}
-
-/* 성과 아이템 효과 */
-.achievement-item {
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.achievement-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12) !important;
-}
-
-/* 이미지 효과 */
-.enhanced-image {
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.enhanced-image:hover {
-  transform: scale(1.02);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
 }
 </style>
-
-<!-- 스크립트 -->
-<script>
-// 숫자 카운터 애니메이션
-document.addEventListener('DOMContentLoaded', function() {
-  const counters = document.querySelectorAll('.counter');
-  const speed = 200; // 애니메이션 속도 조절
-  
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const counter = entry.target;
-        const target = parseInt(counter.innerText.replace(/[^\d]/g, ''));
-        let count = 0;
-        const updateCount = () => {
-          const increment = target / speed;
-          if (count < target) {
-            count += increment;
-            counter.innerText = Math.ceil(count) + (counter.innerText.includes('+') ? '+' : '');
-            setTimeout(updateCount, 1);
-          } else {
-            counter.innerText = target + (counter.innerText.includes('+') ? '+' : '');
-          }
-        };
-        updateCount();
-        observer.unobserve(counter);
-      }
-    });
-  }, observerOptions);
-  
-  counters.forEach(counter => {
-    observer.observe(counter);
-  });
-  
-  // 페이드인 애니메이션
-  const fadeInElements = document.querySelectorAll('.fade-in-element');
-  
-  const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  fadeInElements.forEach(element => {
-    fadeObserver.observe(element);
-  });
-  
-  // 기술 스택 아이템 호버 효과
-  const techItems = document.querySelectorAll('.tech-item');
-  techItems.forEach(item => {
-    item.addEventListener('mouseenter', function() {
-      this.style.transform = 'scale(1.15)';
-    });
-    item.addEventListener('mouseleave', function() {
-      this.style.transform = 'scale(1)';
-    });
-  });
-});
-</script>
