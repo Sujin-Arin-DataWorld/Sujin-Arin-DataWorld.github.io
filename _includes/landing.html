@@ -272,8 +272,7 @@
     </div>
   </div>
 </div>
-
-<!-- 여정 섹션 -->
+<!-- 여정 섹션 --><!-- 개선된 여정 섹션 -->
 <div class="container mt-5 mb-5 fade-in-element">
   <div class="section-header text-center mb-5">
     <h2 class="section-title" style="font-weight: 700; color: var(--text-primary); margin-bottom: 15px;">My Data Science Journey</h2>
@@ -306,11 +305,215 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6 mb-4 text-center">
-      <img src="/assets/img/journey.jpg" alt="Data Science Journey" class="img-fluid rounded shadow enhanced-image" style="max-height: 400px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border-radius: 12px;">
+    <div class="col-md-6 mb-4">
+      <!-- 개선된 여정 시각화 -->
+      <div class="journey-visualization" style="background-color: var(--card-bg); border-radius: 12px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); height: 100%;">
+        <div class="journey-path">
+          <!-- Journey Step 1 -->
+          <div class="journey-step">
+            <div class="journey-milestone">
+              <div class="milestone-dot" style="background: linear-gradient(135deg, #5665E9, #A271F8);"></div>
+              <div class="milestone-line"></div>
+            </div>
+            <div class="journey-details">
+              <div class="journey-year">2021</div>
+              <div class="journey-title">Beginning the Journey</div>
+              <div class="journey-description">First exposure to data analysis through online courses and small projects</div>
+            </div>
+          </div>
+          
+          <!-- Journey Step 2 -->
+          <div class="journey-step">
+            <div class="journey-milestone">
+              <div class="milestone-dot" style="background: linear-gradient(135deg, #5665E9, #A271F8);"></div>
+              <div class="milestone-line"></div>
+            </div>
+            <div class="journey-details">
+              <div class="journey-year">2022</div>
+              <div class="journey-title">Skill Development</div>
+              <div class="journey-description">Mastered Python, SQL, and data visualization tools</div>
+            </div>
+          </div>
+          
+          <!-- Journey Step 3 -->
+          <div class="journey-step">
+            <div class="journey-milestone">
+              <div class="milestone-dot" style="background: linear-gradient(135deg, #5665E9, #A271F8);"></div>
+              <div class="milestone-line"></div>
+            </div>
+            <div class="journey-details">
+              <div class="journey-year">2023</div>
+              <div class="journey-title">Machine Learning</div>
+              <div class="journey-description">Delved into predictive modeling and algorithm optimization</div>
+            </div>
+          </div>
+          
+          <!-- Journey Step 4 -->
+          <div class="journey-step">
+            <div class="journey-milestone">
+              <div class="milestone-dot" style="background: linear-gradient(135deg, #5665E9, #A271F8);"></div>
+              <div class="milestone-line"></div>
+            </div>
+            <div class="journey-details">
+              <div class="journey-year">2024</div>
+              <div class="journey-title">Advanced Analytics</div>
+              <div class="journey-description">Deep learning, NLP, and real-time data analysis</div>
+            </div>
+          </div>
+          
+          <!-- Journey Step 5 (Future) -->
+          <div class="journey-step future-step">
+            <div class="journey-milestone">
+              <div class="milestone-dot" style="background: linear-gradient(135deg, #5665E9, #A271F8); opacity: 0.5;"></div>
+            </div>
+            <div class="journey-details">
+              <div class="journey-year">Future</div>
+              <div class="journey-title">Data Science Innovation</div>
+              <div class="journey-description">Creating novel approaches to complex financial data challenges</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- 여정 시각화를 위한 스타일 -->
+<style>
+.journey-visualization {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.journey-visualization:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.journey-path {
+  padding: 10px 0;
+}
+
+.journey-step {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.journey-step:last-child {
+  margin-bottom: 0;
+}
+
+.journey-milestone {
+  position: relative;
+  min-width: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.milestone-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 0 4px rgba(86, 101, 233, 0.2);
+  transition: all 0.3s ease;
+}
+
+.journey-step:hover .milestone-dot {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 6px rgba(86, 101, 233, 0.3);
+}
+
+.milestone-line {
+  position: absolute;
+  top: 22px;
+  width: 3px;
+  height: calc(100% + 30px);
+  background: linear-gradient(to bottom, rgba(86, 101, 233, 0.7), rgba(162, 113, 248, 0.3));
+  z-index: 1;
+}
+
+.journey-step:last-child .milestone-line {
+  display: none;
+}
+
+.journey-details {
+  padding-left: 20px;
+  padding-bottom: 5px;
+}
+
+.journey-year {
+  font-weight: 700;
+  color: #5665E9;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  background: linear-gradient(90deg, #5665E9, #A271F8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.journey-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  margin-bottom: 5px;
+}
+
+.journey-description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.future-step {
+  opacity: 0.75;
+}
+
+.future-step .journey-description {
+  font-style: italic;
+}
+
+/* Hover effects */
+.journey-step:hover .journey-details {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
+
+.journey-step:not(:hover) .journey-details {
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .journey-year {
+    font-size: 1rem;
+  }
+  
+  .journey-title {
+    font-size: 0.95rem;
+  }
+  
+  .journey-description {
+    font-size: 0.85rem;
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .milestone-dot {
+    box-shadow: 0 0 0 4px rgba(86, 101, 233, 0.3);
+  }
+  
+  .journey-step:hover .milestone-dot {
+    box-shadow: 0 0 0 6px rgba(86, 101, 233, 0.4);
+  }
+}
+</style>
+
 <!-- 최근 활동 타임라인 - 수정된 버전 -->
 <div class="container mt-5 mb-5 fade-in-element">
   <div class="section-header text-center mb-5">
