@@ -1,24 +1,24 @@
 <!-- 히어로 섹션 -->
-<div style="background: linear-gradient(135deg, #4568dc, #b06ab3); padding: 80px 0; text-align: center; color: white; border-radius: 5px; margin-bottom: 50px;">
+<div style="background: linear-gradient(135deg, #5665E9, #A271F8); padding: 80px 0; text-align: center; color: white; border-radius: 12px; margin-bottom: 50px; box-shadow: 0 5px 25px rgba(0,0,0,0.1);">
   <div class="container">
-    <div class="row">
+    <div class="row align-items-center">
       <div class="col-lg-4 col-md-6 text-center">
         <!-- 원형 이미지 유지 -->
         <div id="container" class="my-2">
           <div id="dummy"></div>
           <div id="element">
-            <img src="{{ site.author.image }}" alt="{{ site.title }}" class="circle-image wow animated zoomIn enhanced-image" data-wow-delay=".1s" style="border: 3px solid white;">
+            <img src="{{ site.author.image }}" alt="{{ site.title }}" class="circle-image wow animated zoomIn enhanced-image" data-wow-delay=".1s" style="border: 4px solid white; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
           </div>
         </div>
       </div>
-      <div class="col-lg-8 col-md-6">
-        <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 20px;" class="wow animated fadeInUp" data-wow-delay=".1s">Turning Data into Actionable Insights</h1>
-        <p style="font-size: 1.2rem; margin-bottom: 30px;" class="wow animated fadeInUp" data-wow-delay=".15s">
+      <div class="col-lg-8 col-md-6 text-left">
+        <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.1);" class="wow animated fadeInUp" data-wow-delay=".1s">Turning Data into Actionable Insights</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95;" class="wow animated fadeInUp" data-wow-delay=".15s">
           Financial Data Analyst specializing in Python, SQL, Machine Learning & Data Visualization
         </p>
         <div class="wow animated fadeInUp" data-wow-delay=".2s">
-          <a href="{{ site.baseurl }}/projects/" class="btn btn-light btn-lg mr-3" style="margin-right: 15px;">View Projects</a>
-          <a href="{{ site.baseurl }}/about/" class="btn btn-outline-light btn-lg">About Me</a>
+          <a href="{{ site.baseurl }}/projects/" class="btn btn-light btn-lg mr-3" style="margin-right: 15px; font-weight: 600; box-shadow: 0 3px 8px rgba(0,0,0,0.1);">View Projects</a>
+          <a href="{{ site.baseurl }}/about/" class="btn btn-outline-light btn-lg" style="font-weight: 600; box-shadow: 0 3px 8px rgba(0,0,0,0.1);">About Me</a>
         </div>
       </div>
     </div>
@@ -27,21 +27,27 @@
 
 <!-- 프로젝트 섹션 -->
 <div class="container mt-5 fade-in-element">
-  <h2 class="mb-4 text-center">Featured Projects</h2>
+  <div class="section-header text-center mb-5">
+    <h2 class="section-title" style="font-weight: 700; color: var(--text-primary); margin-bottom: 15px;">Featured Projects</h2>
+    <div class="section-divider" style="width: 70px; height: 4px; background: linear-gradient(90deg, #5665E9, #A271F8); margin: 0 auto;"></div>
+  </div>
   <div class="row">
     {% for project in site.projects limit:4 %}
     <div class="col-md-6 mb-4">
-      <div class="card h-100">
-        <img src="{{ project.image }}" class="card-img-top" alt="{{ project.name }}" style="height: 200px; object-fit: cover;">
+      <div class="card h-100 project-card" style="border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+        <div class="project-image position-relative">
+          <img src="{{ project.image }}" class="card-img-top" alt="{{ project.name }}" style="height: 200px; object-fit: cover;">
+          <div class="image-overlay position-absolute" style="top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6));"></div>
+        </div>
         <div class="card-body">
-          <h5 class="card-title">{{ project.name }}</h5>
-          <p class="card-text">{{ project.description }}</p>
-          <p>
+          <h5 class="card-title" style="font-weight: 600; color: var(--text-primary);">{{ project.name }}</h5>
+          <p class="card-text" style="color: var(--text-secondary);">{{ project.description }}</p>
+          <div class="mb-3">
             {% for tool in project.tools %}
-            <span class="badge badge-pill badge-primary">{{ tool }}</span>
+            <span class="badge badge-pill" style="background-color: rgba(86, 101, 233, 0.1); color: #5665E9; margin-right: 5px; margin-bottom: 5px; padding: 5px 10px; font-weight: 500;">{{ tool }}</span>
             {% endfor %}
-          </p>
-          <a href="{{ project.url | relative_url }}" class="btn btn-outline-primary">Detail Check</a>
+          </div>
+          <a href="{{ project.url | relative_url }}" class="btn btn-sm" style="background: linear-gradient(135deg, #5665E9, #A271F8); color: white; font-weight: 500; padding: 5px 15px; border-radius: 20px;">Detail Check</a>
         </div>
       </div>
     </div>
@@ -51,32 +57,41 @@
 
 <!-- 핵심 역량 섹션 -->
 <div class="container mt-5 mb-5 fade-in-element">
-  <h2 class="text-center mb-4">Core Competencies</h2>
+  <div class="section-header text-center mb-5">
+    <h2 class="section-title" style="font-weight: 700; color: var(--text-primary); margin-bottom: 15px;">Core Competencies</h2>
+    <div class="section-divider" style="width: 70px; height: 4px; background: linear-gradient(90deg, #5665E9, #A271F8); margin: 0 auto;"></div>
+  </div>
   <div class="row text-center">
     <div class="col-md-4 mb-4">
-      <div class="card h-100 border-0 shadow-sm">
+      <div class="card h-100 border-0 competency-card" style="border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); background-color: var(--card-bg);">
         <div class="card-body">
-          <i class="fas fa-chart-line fa-3x mb-3 text-primary"></i>
-          <h4>Data Analysis</h4>
-          <p>Discover meaningful patterns and trends in complex datasets to derive valuable business insights.</p>
+          <div class="icon-container mb-3 mx-auto rounded-circle d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background: linear-gradient(135deg, #5665E9, #A271F8); color: white;">
+            <i class="fas fa-chart-line fa-2x"></i>
+          </div>
+          <h4 style="color: var(--text-primary); font-weight: 600; margin-top: 15px;">Data Analysis</h4>
+          <p style="color: var(--text-secondary);">Discover meaningful patterns and trends in complex datasets to derive valuable business insights.</p>
         </div>
       </div>
     </div>
     <div class="col-md-4 mb-4">
-      <div class="card h-100 border-0 shadow-sm">
+      <div class="card h-100 border-0 competency-card" style="border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); background-color: var(--card-bg);">
         <div class="card-body">
-          <i class="fas fa-robot fa-3x mb-3 text-primary"></i>
-          <h4>Machine Learning</h4>
-          <p>Develop predictive models to enable data-driven decision making and automated solutions.</p>
+          <div class="icon-container mb-3 mx-auto rounded-circle d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background: linear-gradient(135deg, #5665E9, #A271F8); color: white;">
+            <i class="fas fa-robot fa-2x"></i>
+          </div>
+          <h4 style="color: var(--text-primary); font-weight: 600; margin-top: 15px;">Machine Learning</h4>
+          <p style="color: var(--text-secondary);">Develop predictive models to enable data-driven decision making and automated solutions.</p>
         </div>
       </div>
     </div>
     <div class="col-md-4 mb-4">
-      <div class="card h-100 border-0 shadow-sm">
+      <div class="card h-100 border-0 competency-card" style="border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); background-color: var(--card-bg);">
         <div class="card-body">
-          <i class="fas fa-desktop fa-3x mb-3 text-primary"></i>
-          <h4>Data Visualization</h4>
-          <p>Communicate complex information through clear and intuitive visual representations for better understanding.</p>
+          <div class="icon-container mb-3 mx-auto rounded-circle d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background: linear-gradient(135deg, #5665E9, #A271F8); color: white;">
+            <i class="fas fa-desktop fa-2x"></i>
+          </div>
+          <h4 style="color: var(--text-primary); font-weight: 600; margin-top: 15px;">Data Visualization</h4>
+          <p style="color: var(--text-secondary);">Communicate complex information through clear and intuitive visual representations for better understanding.</p>
         </div>
       </div>
     </div>
@@ -84,46 +99,76 @@
 </div>
 
 <!-- 성과 숫자 섹션 -->
-<div class="bg-light py-5 mt-5 pattern-bg-1 fade-in-element">
+<div class="py-5 mt-5 fade-in-element achievements-section" style="background: linear-gradient(to right, rgba(86, 101, 233, 0.05), rgba(162, 113, 248, 0.05)); border-radius: 12px;">
   <div class="container">
-    <h2 class="text-center mb-5">Achievements by the Numbers</h2>
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title" style="font-weight: 700; color: var(--text-primary); margin-bottom: 15px;">Achievements by the Numbers</h2>
+      <div class="section-divider" style="width: 70px; height: 4px; background: linear-gradient(90deg, #5665E9, #A271F8); margin: 0 auto;"></div>
+    </div>
     <div class="row text-center">
-      <div class="col-md-3 mb-4">
-        <h2 class="display-4 font-weight-bold counter">15+</h2>
-        <p class="text-muted">Completed Projects</p>
+      <div class="col-md-3 col-6 mb-4">
+        <div class="achievement-item p-3" style="background-color: var(--card-bg); border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+          <h2 class="display-4 font-weight-bold counter" style="background: linear-gradient(135deg, #5665E9, #A271F8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: #5665E9;">15+</h2>
+          <p style="color: var(--text-secondary); font-weight: 500;">Completed Projects</p>
+        </div>
       </div>
-      <div class="col-md-3 mb-4">
-        <h2 class="display-4 font-weight-bold counter">10+</h2>
-        <p class="text-muted">Technologies & Tools</p>
+      <div class="col-md-3 col-6 mb-4">
+        <div class="achievement-item p-3" style="background-color: var(--card-bg); border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+          <h2 class="display-4 font-weight-bold counter" style="background: linear-gradient(135deg, #5665E9, #A271F8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: #5665E9;">10+</h2>
+          <p style="color: var(--text-secondary); font-weight: 500;">Technologies & Tools</p>
+        </div>
       </div>
-      <div class="col-md-3 mb-4">
-        <h2 class="display-4 font-weight-bold counter">5+</h2>
-        <p class="text-muted">Data Analysis Fields</p>
+      <div class="col-md-3 col-6 mb-4">
+        <div class="achievement-item p-3" style="background-color: var(--card-bg); border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+          <h2 class="display-4 font-weight-bold counter" style="background: linear-gradient(135deg, #5665E9, #A271F8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: #5665E9;">5+</h2>
+          <p style="color: var(--text-secondary); font-weight: 500;">Data Analysis Fields</p>
+        </div>
       </div>
-
+      <div class="col-md-3 col-6 mb-4">
+        <div class="achievement-item p-3" style="background-color: var(--card-bg); border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+          <h2 class="display-4 font-weight-bold counter" style="background: linear-gradient(135deg, #5665E9, #A271F8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: #5665E9;">3+</h2>
+          <p style="color: var(--text-secondary); font-weight: 500;">Years Experience</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- 데이터 인사이트 섹션 -->
 <div class="container mt-5 mb-5 fade-in-element">
-  <h2 class="text-center mb-4">Data Insights</h2>
+  <div class="section-header text-center mb-5">
+    <h2 class="section-title" style="font-weight: 700; color: var(--text-primary); margin-bottom: 15px;">Data Insights</h2>
+    <div class="section-divider" style="width: 70px; height: 4px; background: linear-gradient(90deg, #5665E9, #A271F8); margin: 0 auto;"></div>
+  </div>
   <div class="row">
     <div class="col-md-6 mb-4">
-      <div class="card h-100 border-0 shadow-sm">
+      <div class="card h-100 border-0 insight-card" style="border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); background-color: var(--card-bg); overflow: hidden;">
         <div class="card-body">
-          <h5 class="card-title data-accent">Financial Market Predictability</h5>
-          <p class="card-text">Through time series analysis of financial markets, I discovered that prediction accuracy can be improved up to 75% under specific conditions.</p>
-          <div class="text-center">
-            <img src="/assets/img/insight1.jpg" alt="Financial Market Analysis" class="img-fluid rounded" style="max-height: 150px;">
+          <div class="insight-header mb-3 d-flex align-items-center">
+            <div class="insight-icon rounded-circle d-flex align-items-center justify-content-center mr-3" style="min-width: 50px; height: 50px; background: linear-gradient(135deg, #5665E9, #A271F8); color: white;">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h5 class="card-title mb-0" style="color: var(--text-primary); font-weight: 600;">Financial Market Predictability</h5>
+          </div>
+          <p class="card-text" style="color: var(--text-secondary);">Through time series analysis of financial markets, I discovered that prediction accuracy can be improved up to 75% under specific conditions.</p>
+          <div class="text-center mt-4">
+            <img src="/assets/img/insight1.jpg" alt="Financial Market Analysis" class="img-fluid rounded enhanced-image" style="max-height: 150px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-6 mb-4">
-      <div class="card h-100 border-0 shadow-sm">
+      <div class="card h-100 border-0 insight-card" style="border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); background-color: var(--card-bg); overflow: hidden;">
         <div class="card-body">
-          <h5 class="card-title data-accent">Social Media and Stock Price Correlation</h5>
-          <p class="card-text">Research on correlation between social media sentiment analysis and stock price movements revealed that 32% of stock fluctuations within 24 hours can be explained by social media trends.</p>
-          <div class="text-center">
-            <img src="/assets/img/insight2.jpg" alt="Social Media Analysis" class="img-fluid rounded" style="max-height: 150px;">
+          <div class="insight-header mb-3 d-flex align-items-center">
+            <div class="insight-icon rounded-circle d-flex align-items-center justify-content-center mr-3" style="min-width: 50px; height: 50px; background: linear-gradient(135deg, #5665E9, #A271F8); color: white;">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h5 class="card-title mb-0" style="color: var(--text-primary); font-weight: 600;">Social Media and Stock Price Correlation</h5>
+          </div>
+          <p class="card-text" style="color: var(--text-secondary);">Research on correlation between social media sentiment analysis and stock price movements revealed that 32% of stock fluctuations within 24 hours can be explained by social media trends.</p>
+          <div class="text-center mt-4">
+            <img src="/assets/img/insight2.jpg" alt="Social Media Analysis" class="img-fluid rounded enhanced-image" style="max-height: 150px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </div>
         </div>
       </div>
@@ -133,34 +178,49 @@
 
 <!-- 기술 스택 섹션 -->
 <div class="container mt-5 mb-5 fade-in-element">
-  <h2 class="text-center mb-4">Tech Stack</h2>
+  <div class="section-header text-center mb-5">
+    <h2 class="section-title" style="font-weight: 700; color: var(--text-primary); margin-bottom: 15px;">Tech Stack</h2>
+    <div class="section-divider" style="width: 70px; height: 4px; background: linear-gradient(90deg, #5665E9, #A271F8); margin: 0 auto;"></div>
+  </div>
   <div class="row justify-content-center">
-    <div class="col-lg-8">
-      <div class="tech-stack-container p-4 rounded">
+    <div class="col-lg-10">
+      <div class="tech-stack-container p-4 rounded" style="border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); background-color: var(--card-bg);">
         <div class="row text-center">
           <div class="col-4 col-md-2 mb-4">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="img-fluid tech-icon" style="max-height: 60px;">
-            <p class="mt-2 mb-0">Python</p>
+            <div class="tech-item" style="transition: transform 0.3s ease;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="img-fluid tech-icon" style="max-height: 60px; filter: var(--tech-icon-filter);">
+              <p class="mt-2 mb-0" style="color: var(--text-primary); font-weight: 500;">Python</p>
+            </div>
           </div>
           <div class="col-4 col-md-2 mb-4">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="img-fluid tech-icon" style="max-height: 60px;">
-            <p class="mt-2 mb-0">Pandas</p>
+            <div class="tech-item" style="transition: transform 0.3s ease;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="img-fluid tech-icon" style="max-height: 60px; filter: var(--tech-icon-filter);">
+              <p class="mt-2 mb-0" style="color: var(--text-primary); font-weight: 500;">Pandas</p>
+            </div>
           </div>
           <div class="col-4 col-md-2 mb-4">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="img-fluid tech-icon" style="max-height: 60px;">
-            <p class="mt-2 mb-0">NumPy</p>
+            <div class="tech-item" style="transition: transform 0.3s ease;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="img-fluid tech-icon" style="max-height: 60px; filter: var(--tech-icon-filter);">
+              <p class="mt-2 mb-0" style="color: var(--text-primary); font-weight: 500;">NumPy</p>
+            </div>
           </div>
           <div class="col-4 col-md-2 mb-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" class="img-fluid tech-icon" style="max-height: 60px;">
-            <p class="mt-2 mb-0">Scikit-learn</p>
+            <div class="tech-item" style="transition: transform 0.3s ease;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" class="img-fluid tech-icon" style="max-height: 60px; filter: var(--tech-icon-filter);">
+              <p class="mt-2 mb-0" style="color: var(--text-primary); font-weight: 500;">Scikit-learn</p>
+            </div>
           </div>
           <div class="col-4 col-md-2 mb-4">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="img-fluid tech-icon" style="max-height: 60px;">
-            <p class="mt-2 mb-0">TensorFlow</p>
+            <div class="tech-item" style="transition: transform 0.3s ease;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="img-fluid tech-icon" style="max-height: 60px; filter: var(--tech-icon-filter);">
+              <p class="mt-2 mb-0" style="color: var(--text-primary); font-weight: 500;">TensorFlow</p>
+            </div>
           </div>
           <div class="col-4 col-md-2 mb-4">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="img-fluid tech-icon" style="max-height: 60px;">
-            <p class="mt-2 mb-0">SQL</p>
+            <div class="tech-item" style="transition: transform 0.3s ease;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="img-fluid tech-icon" style="max-height: 60px; filter: var(--tech-icon-filter);">
+              <p class="mt-2 mb-0" style="color: var(--text-primary); font-weight: 500;">SQL</p>
+            </div>
           </div>
         </div>
       </div>
@@ -169,40 +229,43 @@
 </div>
 
 <!-- 서비스 섹션 -->
-<div class="bg-light py-5 mt-5 pattern-bg-1 fade-in-element">
+<div class="py-5 mt-5 fade-in-element service-section" style="background: linear-gradient(to right, rgba(86, 101, 233, 0.05), rgba(162, 113, 248, 0.05)); border-radius: 12px;">
   <div class="container">
-    <h2 class="text-center mb-5">Service Areas</h2>
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title" style="font-weight: 700; color: var(--text-primary); margin-bottom: 15px;">Service Areas</h2>
+      <div class="section-divider" style="width: 70px; height: 4px; background: linear-gradient(90deg, #5665E9, #A271F8); margin: 0 auto;"></div>
+    </div>
     <div class="row">
       <div class="col-md-4 mb-4">
-        <div class="card h-100 border-0 service-card" style="background-color: #4361ee;">
+        <div class="card h-100 border-0 service-card" style="border-radius: 12px; background: linear-gradient(135deg, #5665E9, #A271F8); overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
           <div class="card-body text-center">
             <div class="service-icon-container mb-3 mx-auto rounded-circle d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background-color: rgba(255, 255, 255, 0.2);">
               <i class="fas fa-search-dollar fa-2x text-white"></i>
             </div>
-            <h4 class="text-white">Financial Data Analysis</h4>
-            <p class="text-white">Market trend analysis, investment portfolio optimization, risk assessment, and predictive modeling</p>
+            <h4 class="text-white font-weight-bold">Financial Data Analysis</h4>
+            <p class="text-white opacity-90">Market trend analysis, investment portfolio optimization, risk assessment, and predictive modeling</p>
           </div>
         </div>
       </div>
       <div class="col-md-4 mb-4">
-        <div class="card h-100 border-0 service-card" style="background-color: #4361ee;">
+        <div class="card h-100 border-0 service-card" style="border-radius: 12px; background: linear-gradient(135deg, #5665E9, #A271F8); overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
           <div class="card-body text-center">
             <div class="service-icon-container mb-3 mx-auto rounded-circle d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background-color: rgba(255, 255, 255, 0.2);">
               <i class="fas fa-users fa-2x text-white"></i>
             </div>
-            <h4 class="text-white">Customer Data Analysis</h4>
-            <p class="text-white">Customer segmentation, purchase pattern analysis, churn prediction, and targeted marketing optimization</p>
+            <h4 class="text-white font-weight-bold">Customer Data Analysis</h4>
+            <p class="text-white opacity-90">Customer segmentation, purchase pattern analysis, churn prediction, and targeted marketing optimization</p>
           </div>
         </div>
       </div>
       <div class="col-md-4 mb-4">
-        <div class="card h-100 border-0 service-card" style="background-color: #4361ee;">
+        <div class="card h-100 border-0 service-card" style="border-radius: 12px; background: linear-gradient(135deg, #5665E9, #A271F8); overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
           <div class="card-body text-center">
             <div class="service-icon-container mb-3 mx-auto rounded-circle d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background-color: rgba(255, 255, 255, 0.2);">
               <i class="fas fa-chart-pie fa-2x text-white"></i>
             </div>
-            <h4 class="text-white">Business Intelligence</h4>
-            <p class="text-white">Custom dashboard development, KPI monitoring, business performance analysis, and decision support</p>
+            <h4 class="text-white font-weight-bold">Business Intelligence</h4>
+            <p class="text-white opacity-90">Custom dashboard development, KPI monitoring, business performance analysis, and decision support</p>
           </div>
         </div>
       </div>
@@ -212,69 +275,68 @@
 
 <!-- 여정 섹션 -->
 <div class="container mt-5 mb-5 fade-in-element">
+  <div class="section-header text-center mb-5">
+    <h2 class="section-title" style="font-weight: 700; color: var(--text-primary); margin-bottom: 15px;">My Data Science Journey</h2>
+    <div class="section-divider" style="width: 70px; height: 4px; background: linear-gradient(90deg, #5665E9, #A271F8); margin: 0 auto;"></div>
+  </div>
   <div class="row align-items-center">
     <div class="col-md-6 mb-4">
-      <h2>My Data Science Journey</h2>
-      <p>My passion for data analysis and interest in finance converged to begin this journey. I was captivated by the process of discovering hidden patterns in complex financial data and deriving meaningful insights from them.</p>
-      <p>I've gained experience analyzing real data and developing models while acquiring various skills in Python, SQL, and machine learning. I aim to continue learning and applying new technologies to provide even more valuable insights.</p>
-      <div class="mt-4">
-        <h5 class="data-accent">Future Goals</h5>
-        <ul>
-          <li>Develop advanced deep learning models for financial market prediction</li>
-          <li>Build real-time data processing and analysis pipelines</li>
-          <li>Enhance sentiment analysis systems using natural language processing</li>
-        </ul>
+      <div class="journey-content p-4" style="border-radius: 12px; background-color: var(--card-bg); box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+        <p style="color: var(--text-secondary);">My passion for data analysis and interest in finance converged to begin this journey. I was captivated by the process of discovering hidden patterns in complex financial data and deriving meaningful insights from them.</p>
+        <p style="color: var(--text-secondary);">I've gained experience analyzing real data and developing models while acquiring various skills in Python, SQL, and machine learning. I aim to continue learning and applying new technologies to provide even more valuable insights.</p>
+        <div class="mt-4">
+          <h5 style="color: var(--text-primary); font-weight: 600; position: relative; padding-left: 15px;">
+            <span style="position: absolute; width: 5px; height: 70%; background: linear-gradient(135deg, #5665E9, #A271F8); left: 0; top: 15%; border-radius: 3px;"></span>
+            Future Goals
+          </h5>
+          <ul class="goal-list" style="list-style-type: none; padding-left: 0;">
+            <li style="color: var(--text-secondary); margin-bottom: 10px; position: relative; padding-left: 30px;">
+              <i class="fas fa-check-circle" style="color: #5665E9; position: absolute; left: 0; top: 2px;"></i>
+              Develop advanced deep learning models for financial market prediction
+            </li>
+            <li style="color: var(--text-secondary); margin-bottom: 10px; position: relative; padding-left: 30px;">
+              <i class="fas fa-check-circle" style="color: #5665E9; position: absolute; left: 0; top: 2px;"></i>
+              Build real-time data processing and analysis pipelines
+            </li>
+            <li style="color: var(--text-secondary); margin-bottom: 10px; position: relative; padding-left: 30px;">
+              <i class="fas fa-check-circle" style="color: #5665E9; position: absolute; left: 0; top: 2px;"></i>
+              Enhance sentiment analysis systems using natural language processing
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="col-md-6 mb-4 text-center">
-      <img src="/assets/img/journey.jpg" alt="Data Science Journey" class="img-fluid rounded shadow enhanced-image" style="max-height: 400px;">
+      <img src="/assets/img/journey.jpg" alt="Data Science Journey" class="img-fluid rounded shadow enhanced-image" style="max-height: 400px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border-radius: 12px;">
     </div>
   </div>
 </div>
 
-<!-- 최근 활동 타임라인 -->
-<div class="container mt-5 mb-5 fade-in-element">
-  <h2 class="text-center mb-5">Recent Activities</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-badge bg-primary">
-        <i class="fas fa-code"></i>
-      </div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h5 class="text-dark">Started Financial Sentiment Analysis Project</h5>
-          <p><small class="text-muted"><i class="fas fa-clock"></i> 2 weeks ago</small></p>
-        </div>
-        <div class="timeline-body">
-          <p class="text-dark">Initiated a financial market sentiment analysis project using news articles and social media data.</p>
-        </div>
-      </div>
-    </div>
-    <div class="timeline-item timeline-inverted">
-      <div class="timeline-badge bg-success">
+<div class="timeline-item timeline-inverted">
+      <div class="timeline-badge" style="background: linear-gradient(135deg, #5665E9, #A271F8); box-shadow: 0 5px 10px rgba(0,0,0,0.1);">
         <i class="fas fa-graduation-cap"></i>
       </div>
-      <div class="timeline-panel">
+      <div class="timeline-panel" style="background-color: var(--card-bg); border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-radius: 12px;">
         <div class="timeline-heading">
-          <h5 class="text-dark">Completed Advanced TensorFlow Course</h5>
-          <p><small class="text-muted"><i class="fas fa-clock"></i> 1 month ago</small></p>
+          <h5 style="color: var(--text-primary); font-weight: 600;">Completed Advanced TensorFlow Course</h5>
+          <p><small style="color: var(--text-muted);"><i class="fas fa-clock"></i> 1 month ago</small></p>
         </div>
         <div class="timeline-body">
-          <p class="text-dark">Enhanced modeling capabilities by completing an advanced course on deep learning model development and optimization.</p>
+          <p style="color: var(--text-secondary);">Enhanced modeling capabilities by completing an advanced course on deep learning model development and optimization.</p>
         </div>
       </div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-badge bg-info">
+      <div class="timeline-badge" style="background: linear-gradient(135deg, #5665E9, #A271F8); box-shadow: 0 5px 10px rgba(0,0,0,0.1);">
         <i class="fas fa-chart-bar"></i>
       </div>
-      <div class="timeline-panel">
+      <div class="timeline-panel" style="background-color: var(--card-bg); border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-radius: 12px;">
         <div class="timeline-heading">
-          <h5 class="text-dark">Built Interactive Dashboard for Financial Data</h5>
-          <p><small class="text-muted"><i class="fas fa-clock"></i> 3 months ago</small></p>
+          <h5 style="color: var(--text-primary); font-weight: 600;">Built Interactive Dashboard for Financial Data</h5>
+          <p><small style="color: var(--text-muted);"><i class="fas fa-clock"></i> 3 months ago</small></p>
         </div>
         <div class="timeline-body">
-          <p class="text-dark">Developed a comprehensive dashboard to visualize financial trends and enable data-driven investment decisions.</p>
+          <p style="color: var(--text-secondary);">Developed a comprehensive dashboard to visualize financial trends and enable data-driven investment decisions.</p>
         </div>
       </div>
     </div>
@@ -286,6 +348,29 @@
 
 <!-- CSS 스타일 -->
 <style>
+/* 다크모드/라이트모드 변수 */
+:root {
+  --text-primary: #333;
+  --text-secondary: #555;
+  --text-muted: #6c757d;
+  --card-bg: white;
+  --bg-light: #f8f9fa;
+  --bg-pattern: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234361ee' fill-opacity='0.05'%3E%3Cpath d='M0 0h4v4H0V0zm8 0h4v4H8V0zm8 0h4v4h-4V0zM4 4h4v4H4V4zm8 0h4v4h-4V4zm-4 4h4v4H8V8zm8 0h4v4h-4V8zm-8 4h4v4H8v-4zm8 0h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+  --tech-icon-filter: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #e1e1e1;
+    --text-secondary: #b8b8b8;
+    --text-muted: #939393;
+    --card-bg: #2d2d3a;
+    --bg-light: #1e1e2d;
+    --bg-pattern: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235665E9' fill-opacity='0.1'%3E%3Cpath d='M0 0h4v4H0V0zm8 0h4v4H8V0zm8 0h4v4h-4V0zM4 4h4v4H4V4zm8 0h4v4h-4V4zm-4 4h4v4H8V8zm8 0h4v4h-4V8zm-8 4h4v4H8v-4zm8 0h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+    --tech-icon-filter: brightness(0.9) contrast(1.1);
+  }
+}
+
 /* 타임라인 스타일 */
 .timeline {
   position: relative;
@@ -299,7 +384,8 @@
   left: 50%;
   width: 3px;
   margin-left: -1.5px;
-  background-color: #e9ecef;
+  background: linear-gradient(to bottom, rgba(86, 101, 233, 0.3), rgba(162, 113, 248, 0.3));
+  border-radius: 3px;
 }
 .timeline-item {
   position: relative;
@@ -328,15 +414,12 @@
   float: left;
   width: 46%;
   padding: 20px;
-  border: 1px solid #d4d4d4;
-  border-radius: 8px;
-  background-color: #fff;
   position: relative;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
 }
 .timeline-panel:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease;
 }
 .timeline-inverted .timeline-panel {
   float: right;
@@ -347,7 +430,6 @@
   clear: both;
 }
 .timeline-heading h5 {
-  font-weight: 600;
   margin-bottom: 8px;
 }
 .timeline-panel:after {
@@ -357,18 +439,16 @@
   right: -10px;
   width: 20px;
   height: 20px;
-  background: #fff;
+  background-color: var(--card-bg);
   transform: rotate(45deg);
-  border-right: 1px solid #d4d4d4;
-  border-top: 1px solid #d4d4d4;
+  border-right: none;
+  border-top: none;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.05);
 }
 .timeline-inverted .timeline-panel:after {
   right: auto;
   left: -10px;
-  border-right: none;
-  border-left: 1px solid #d4d4d4;
-  border-top: 1px solid #d4d4d4;
-  border-bottom: none;
+  box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.05);
 }
 
 /* 반응형 타임라인 */
@@ -390,26 +470,29 @@
   .timeline-panel:after,
   .timeline-inverted .timeline-panel:after {
     left: -10px;
-    border-right: none;
-    border-left: 1px solid #d4d4d4;
-    border-top: 1px solid #d4d4d4;
-    border-bottom: none;
+    box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.05);
   }
 }
 
 /* 추가 반응형 디자인 개선 */
 @media (max-width: 768px) {
-  /* 히어로 섹션 반응형 조정 */
-  [style*="font-size: 2.5rem"] {
-    font-size: 2rem !important;
-  }
-  [style*="font-size: 1.2rem"] {
-    font-size: 1rem !important;
+  /* 타이틀 폰트 사이즈 조정 */
+  .section-title {
+    font-size: 1.8rem !important;
   }
   
-  /* 카드 간격 조정 */
+  /* 카드 간격 및 패딩 조정 */
   .card {
     margin-bottom: 20px;
+  }
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  /* 서비스 카드 조정 */
+  .service-icon-container {
+    width: 60px !important;
+    height: 60px !important;
   }
   
   /* 버튼 크기 및 간격 조정 */
@@ -421,8 +504,16 @@
 
 @media (max-width: 576px) {
   /* 더 작은 화면에서의 조정 */
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+  
+  /* 히어로 섹션 텍스트 조정 */
   [style*="font-size: 2.5rem"] {
     font-size: 1.75rem !important;
+  }
+  [style*="font-size: 1.2rem"] {
+    font-size: 1rem !important;
   }
   
   /* 숫자 성과 섹션 조정 */
@@ -430,9 +521,20 @@
     font-size: 2.5rem;
   }
   
-  /* 서비스 영역 카드 여백 조정 */
-  .card-body {
-    padding: 1rem;
+  /* 아이콘 크기 조정 */
+  .fa-2x {
+    font-size: 1.5em;
+  }
+  
+  /* 여백 조정 */
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* 타임라인 추가 조정 */
+  .timeline-panel {
+    padding: 15px;
   }
 }
 
@@ -450,11 +552,23 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+/* 프로젝트 이미지 오버레이 호버 효과 */
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+.image-overlay {
+  transition: opacity 0.3s ease;
+}
+.project-card:hover .image-overlay {
+  opacity: 0.3;
+}
+
 /* 기술 스택 아이콘 호버 효과 */
-.tech-icon {
+.tech-item {
   transition: transform 0.3s;
 }
-.tech-icon:hover {
+.tech-item:hover {
   transform: scale(1.15);
 }
 
@@ -469,43 +583,16 @@
   transform: translateY(0);
 }
 
-/* 섹션 구분을 위한 배경 패턴 */
-.pattern-bg-1 {
-  background-color: #f8f9fa;
-  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234361ee' fill-opacity='0.05'%3E%3Cpath d='M0 0h4v4H0V0zm8 0h4v4H8V0zm8 0h4v4h-4V0zM4 4h4v4H4V4zm8 0h4v4h-4V4zm-4 4h4v4H8V8zm8 0h4v4h-4V8zm-8 4h4v4H8v-4zm8 0h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-/* 데이터 스타일 강조 요소 */
-.data-accent {
-  position: relative;
-  padding-left: 15px;
-}
-.data-accent::before {
-  content: '';
-  position: absolute;
-  width: 5px;
-  height: 70%;
-  background: linear-gradient(135deg, #4568dc, #b06ab3);
-  left: 0;
-  top: 15%;
-  border-radius: 3px;
-}
-
-/* 이미지 테두리 강화 */
-.enhanced-image {
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.enhanced-image:hover {
-  transform: scale(1.02);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+/* 섹션 구분 스타일 */
+.section-header {
+  margin-bottom: 3rem;
 }
 
 /* 서비스 카드 고급화 */
 .service-card {
   overflow: hidden;
-  border-radius: 10px;
   position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .service-card::before {
   content: '';
@@ -518,12 +605,45 @@
   border-radius: 50%;
   z-index: 0;
 }
+.service-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
+}
 
-/* 기술 스택 섹션 개선 */
-.tech-stack-container {
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  background: linear-gradient(to right, #fafafa, #f5f5f5);
+/* 역량 카드 효과 */
+.competency-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.competency-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12) !important;
+}
+
+/* 인사이트 카드 효과 */
+.insight-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.insight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12) !important;
+}
+
+/* 성과 아이템 효과 */
+.achievement-item {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.achievement-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12) !important;
+}
+
+/* 이미지 효과 */
+.enhanced-image {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.enhanced-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
 }
 </style>
 
@@ -579,6 +699,17 @@ document.addEventListener('DOMContentLoaded', function() {
   
   fadeInElements.forEach(element => {
     fadeObserver.observe(element);
+  });
+  
+  // 기술 스택 아이템 호버 효과
+  const techItems = document.querySelectorAll('.tech-item');
+  techItems.forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      this.style.transform = 'scale(1.15)';
+    });
+    item.addEventListener('mouseleave', function() {
+      this.style.transform = 'scale(1)';
+    });
   });
 });
 </script>
