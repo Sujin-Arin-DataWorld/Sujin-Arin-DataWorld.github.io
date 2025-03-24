@@ -32,7 +32,45 @@
     <div class="section-divider" style="width: 70px; height: 4px; background: linear-gradient(90deg, #5665E9, #A271F8); margin: 0 auto;"></div>
   </div>
   <div class="row">
-    {% for project in site.projects limit:4 %}
+    {% assign featured_project = site.projects | where: "featured", true | first %}
+    {% if featured_project %}
+    <!-- Featured Project (큰 카드) -->
+    <div class="col-md-12 mb-4">
+      <div class="card h-100 project-card featured-project" style="border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.12);">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            <div class="project-image position-relative h-100">
+              <img src="{{ featured_project.image }}" class="card-img h-100" alt="{{ featured_project.name }}" style="object-fit: cover;">
+              <div class="image-overlay position-absolute" style="top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6));"></div>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="card-title" style="font-weight: 700; color: var(--text-primary); font-size: 1.5rem;">{{ featured_project.name }}</h5>
+                <span class="badge" style="background: linear-gradient(135deg, #FFA500, #FF6347); color: white; font-weight: 500; padding: 5px 12px; border-radius: 20px;">Featured</span>
+              </div>
+              <p class="card-text" style="color: var(--text-secondary);">{{ featured_project.description }}</p>
+              <div class="mb-3">
+                {% for tool in featured_project.tools %}
+                <span class="badge badge-pill" style="background-color: rgba(86, 101, 233, 0.1); color: #5665E9; margin-right: 5px; margin-bottom: 5px; padding: 5px 10px; font-weight: 500;">{{ tool }}</span>
+                {% endfor %}
+              </div>
+              {% if featured_project.external_url %}
+                <a href="{{ featured_project.external_url }}" class="btn" style="background: linear-gradient(135deg, #5665E9, #A271F8); color: white; font-weight: 500; padding: 7px 20px; border-radius: 20px;" target="_blank">View Project <i class="fas fa-external-link-alt ml-1"></i></a>
+              {% else %}
+                <a href="{{ featured_project.url | relative_url }}" class="btn" style="background: linear-gradient(135deg, #5665E9, #A271F8); color: white; font-weight: 500; padding: 7px 20px; border-radius: 20px;">Detail Check</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    
+    <!-- 일반 프로젝트 카드 -->
+    {% assign regular_projects = site.projects | where_exp: "project", "project.featured != true" | limit: 4 %}
+    {% for project in regular_projects %}
     <div class="col-md-6 mb-4">
       <div class="card h-100 project-card" style="border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
         <div class="project-image position-relative">
@@ -47,7 +85,11 @@
             <span class="badge badge-pill" style="background-color: rgba(86, 101, 233, 0.1); color: #5665E9; margin-right: 5px; margin-bottom: 5px; padding: 5px 10px; font-weight: 500;">{{ tool }}</span>
             {% endfor %}
           </div>
-          <a href="{{ project.url | relative_url }}" class="btn btn-sm" style="background: linear-gradient(135deg, #5665E9, #A271F8); color: white; font-weight: 500; padding: 5px 15px; border-radius: 20px;">Detail Check</a>
+          {% if project.external_url %}
+            <a href="{{ project.external_url }}" class="btn btn-sm" style="background: linear-gradient(135deg, #5665E9, #A271F8); color: white; font-weight: 500; padding: 5px 15px; border-radius: 20px;" target="_blank">View Project <i class="fas fa-external-link-alt ml-1"></i></a>
+          {% else %}
+            <a href="{{ project.url | relative_url }}" class="btn btn-sm" style="background: linear-gradient(135deg, #5665E9, #A271F8); color: white; font-weight: 500; padding: 5px 15px; border-radius: 20px;">Detail Check</a>
+          {% endif %}
         </div>
       </div>
     </div>
