@@ -9,7 +9,7 @@ featured: true
 
 # Fear & Greed Market Analysis Dashboard
 
-This project analyzes the relationship between the Fear & Greed Index and stock market performance. Based on data from January to March 2025, it visualizes which stocks perform well during fear and greed market phases.
+This project analyzes the relationship between the Fear & Greed Index and stock market performance. Based on data from January 2023 to March 2025, it visualizes which stocks perform well during fear and greed market phases.
 
 <div class="embed-responsive">
   <iframe src="/assets/fear_greed_dashboard.html" height="800px" width="100%" frameborder="0" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></iframe>
