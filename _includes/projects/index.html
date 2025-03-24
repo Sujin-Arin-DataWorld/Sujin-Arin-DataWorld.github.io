@@ -2,10 +2,9 @@
   <!-- 프로젝트 소개 섹션 -->
   <div class="text-center mb-5">
     <h2 class="display-4 mb-3">My Projects</h2>
-    <p class="lead text-muted">데이터 분석 및 머신러닝 프로젝트 모음입니다</p>
+    <p class="lead text-muted">Data Analyse & Machine Learning Projects</p>
     <hr class="my-4 w-25 mx-auto">
   </div>
-
   <!-- 프로젝트 필터링 버튼 (선택 사항) -->
   <div class="text-center mb-4">
     <div class="btn-group" role="group">
@@ -13,9 +12,9 @@
       <button type="button" class="btn btn-outline-primary" data-filter="data">Data Analysis</button>
       <button type="button" class="btn btn-outline-primary" data-filter="ml">Machine Learning</button>
       <button type="button" class="btn btn-outline-primary" data-filter="viz">Visualization</button>
+      <button type="button" class="btn btn-outline-primary" data-filter="finance">Financial Analysis</button>
     </div>
   </div>
-
   <!-- 프로젝트 카드 레이아웃 -->
   <div class="row">
     <!-- Remote Projects -->
@@ -60,9 +59,40 @@
         {%- assign project_url = project.url | relative_url -%}
         {%- assign external    = false -%}
       {%- endif -%}
-      <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="{{ project.category | default: 'all' }}">
-        {% include projects/project-card.html %}
-      </div>
+      
+      <!-- 특정 프로젝트를 큰 카드로 표시 -->
+      {% if project_id == 'fear-greed-market-analysis-dashboard' or project.featured == true %}
+        <div class="col-md-12 mb-5 project-item featured-project" data-category="{{ project.category | default: 'all' }}">
+          <div class="card h-100 border-0 shadow-lg">
+            <div class="row no-gutters">
+              <div class="col-md-5">
+                <img src="{{ project_img }}" class="card-img h-100" alt="{{ project_name }}" style="object-fit: cover;">
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h5 class="card-title font-weight-bold mb-0">{{ project_name }}</h5>
+                    <span class="badge badge-warning px-3 py-2">Featured</span>
+                  </div>
+                  <p class="card-text">{{ project_desc }}</p>
+                  <div class="mb-3">
+                    {% for tool in project_tools %}
+                    <span class="badge badge-pill badge-primary mr-2 mb-2">{{ tool }}</span>
+                    {% endfor %}
+                  </div>
+                  <a href="{{ project_url }}" class="btn btn-primary" {% if external %}target="_blank"{% endif %}>
+                    View Project {% if external %}<i class="fas fa-external-link-alt ml-1"></i>{% endif %}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="{{ project.category | default: 'all' }}">
+          {% include projects/project-card.html %}
+        </div>
+      {% endif %}
     {% endfor %}
   </div>
 </div>
@@ -87,3 +117,37 @@
     });
   });
 </script>
+
+<style>
+  .featured-project .card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .featured-project .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+  }
+  
+  .featured-project .badge-warning {
+    background: linear-gradient(135deg, #FFA500, #FF6347);
+    color: white;
+    font-weight: 500;
+    border-radius: 20px;
+  }
+  
+  .featured-project .card-title {
+    font-size: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .featured-project .row {
+      flex-direction: column;
+    }
+    
+    .featured-project .col-md-5 img {
+      height: 250px;
+    }
+  }
+</style>
