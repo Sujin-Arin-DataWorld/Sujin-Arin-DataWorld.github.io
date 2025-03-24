@@ -2,7 +2,7 @@
 name: Fear & Greed Market Analysis Dashboard
 tools: [Python, Plotly, Data Analysis]
 image: /assets/images/fear_greed_preview.png
-description: An interactive dashboard analyzing the relationship between market sentiment (Fear & Greed Index) and stock performance.
+description: An interactive dashboard analyzing the relationship between market sentiment (Fear & Greed Index) and stock performance across different sectors.
 external_url: /assets/fear_greed_dashboard.html
 category: finance
 featured: true
