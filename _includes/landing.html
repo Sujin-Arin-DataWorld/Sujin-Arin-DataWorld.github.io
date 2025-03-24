@@ -141,7 +141,8 @@
     <div class="section-divider" style="width: 70px; height: 4px; background: linear-gradient(90deg, #5665E9, #A271F8); margin: 0 auto;"></div>
   </div>
   <div class="row">
-    <div class="col-md-6 mb-4">
+    <!-- 첫 번째 인사이트 카드 -->
+    <div class="col-md-4 mb-4">
       <div class="card h-100 border-0 insight-card" style="border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); background-color: var(--card-bg); overflow: hidden;">
         <div class="card-body">
           <div class="insight-header mb-3 d-flex align-items-center">
@@ -157,7 +158,27 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6 mb-4">
+
+    <!-- 새로운 Fear & Greed 인사이트 카드 -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 border-0 insight-card" style="border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); background-color: var(--card-bg); overflow: hidden;">
+        <div class="card-body">
+          <div class="insight-header mb-3 d-flex align-items-center">
+            <div class="insight-icon rounded-circle d-flex align-items-center justify-content-center mr-3" style="min-width: 50px; height: 50px; background: linear-gradient(135deg, #5665E9, #A271F8); color: white;">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h5 class="card-title mb-0" style="color: var(--text-primary); font-weight: 600;">Fear & Greed Market Dynamics</h5>
+          </div>
+          <p class="card-text" style="color: var(--text-secondary);">Analysis of Fear & Greed Index revealed that technology stocks show 15% better returns during extreme fear periods, while safe-haven assets outperform during greed.</p>
+          <div class="text-center mt-4">
+            <img src="/assets/images/fear_greed_preview.png" alt="Fear & Greed Analysis" class="img-fluid rounded enhanced-image" style="max-height: 150px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 세 번째 인사이트 카드 -->
+    <div class="col-md-4 mb-4">
       <div class="card h-100 border-0 insight-card" style="border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); background-color: var(--card-bg); overflow: hidden;">
         <div class="card-body">
           <div class="insight-header mb-3 d-flex align-items-center">
@@ -523,16 +544,15 @@
   
   <!-- 새로운 타임라인 구조 -->
   <div class="timeline-container">
-    <!-- 타임라인 아이템 1 -->
-    <div class="timeline-block">
-      <div class="timeline-dot" style="background: linear-gradient(135deg, #5665E9, #A271F8);"></div>
-      <div class="timeline-content" style="background-color: var(--card-bg); color: var(--text-primary);">
-        <h5 style="font-weight: 600; color: var(--text-primary);">Started Financial Sentiment Analysis Project</h5>
-        <span class="timeline-date"><i class="fas fa-clock mr-1"></i> 2 weeks ago</span>
-        <p style="color: var(--text-secondary);">Initiated a financial market sentiment analysis project using news articles and social media data.</p>
-      </div>
-    </div>
-    
+    <!-- 타임라인 아이템 1 (새로 추가) -->
+<div class="timeline-block">
+  <div class="timeline-dot" style="background: linear-gradient(135deg, #5665E9, #A271F8);"></div>
+  <div class="timeline-content" style="background-color: var(--card-bg); color: var(--text-primary);">
+    <h5 style="font-weight: 600; color: var(--text-primary);">Developed Fear & Greed Analysis Dashboard</h5>
+    <span class="timeline-date"><i class="fas fa-clock mr-1"></i> 1 week ago</span>
+    <p style="color: var(--text-secondary);">Created an interactive dashboard analyzing market sentiment and stock performance during fear and greed periods.</p>
+  </div>
+</div>
     <!-- 타임라인 아이템 2 -->
     <div class="timeline-block">
       <div class="timeline-dot" style="background: linear-gradient(135deg, #5665E9, #A271F8);"></div>
