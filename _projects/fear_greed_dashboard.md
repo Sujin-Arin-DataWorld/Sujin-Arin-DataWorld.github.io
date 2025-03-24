@@ -11,6 +11,12 @@ featured: true
 
 This project analyzes the relationship between the Fear & Greed Index and stock market performance. Based on data from January to March 2025, it visualizes which stocks perform well during fear and greed market phases.
 
+<div class="embed-responsive">
+  <iframe src="/assets/fear_greed_dashboard.html" height="800px" width="100%" frameborder="0" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></iframe>
+</div>
+
+{% include elements/button.html link="/assets/fear_greed_dashboard.html" text="Explore Interactive Dashboard" %}
+
 ## Key Features
 
 - Identification of stocks that perform well during fear periods (Fear & Greed Index ≤ 25)
@@ -48,8 +54,4 @@ The analysis groups stocks into sectors to identify how different parts of the m
 - Consumer staples demonstrate the most stable performance regardless of market sentiment
 - Trading volume increases significantly across all sectors during sentiment extremes
 
-<div class="embed-responsive">
-  <iframe src="/assets/fear_greed_dashboard.html" height="800px" width="100%" frameborder="0" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></iframe>
-</div>
 
-{% include elements/button.html link="/assets/fear_greed_dashboard.html" text="View in Full Screen" %}
