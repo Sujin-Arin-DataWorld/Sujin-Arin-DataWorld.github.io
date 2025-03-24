@@ -1,10 +1,18 @@
-<div class="wow animated fadeIn card project-card mb-4">
+<div class="wow animated fadeIn card project-card mb-4 {% if project.featured %}featured-project{% endif %}" 
+     style="{% if project.featured %}box-shadow: 0 8px 25px rgba(0,0,0,0.12);{% endif %}">
   <a href="{{ project_url }}" class="text-decoration-none" {% if external %}target="_blank"{% endif %}>
     <!-- 프로젝트 이미지 -->
     {% if project_img %}
     <div class="project-image position-relative">
-      <img src="{{ project_img }}" class="card-img-top" alt="{{ project_name }}" style="height: 200px; object-fit: cover;">
+      <img src="{{ project_img }}" class="card-img-top" alt="{{ project_name }}" style="height: {% if project.featured %}250px{% else %}200px{% endif %}; object-fit: cover;">
       <div class="image-overlay position-absolute" style="top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6));"></div>
+      
+      <!-- Featured 배지 -->
+      {% if project.featured %}
+      <div class="position-absolute" style="top: 15px; right: 15px; background: linear-gradient(135deg, #FFA500, #FF6347); color: white; font-weight: 500; padding: 5px 12px; border-radius: 20px; box-shadow: 0 3px 8px rgba(0,0,0,0.2);">
+        Featured
+      </div>
+      {% endif %}
     </div>
     {% endif %}
     
@@ -14,8 +22,24 @@
       <span class="badge badge-pill badge-primary position-absolute" style="top: 10px; right: 10px;">GitHub</span>
       {% endif %}
       
+      <!-- 카테고리 배지 (finance 등) -->
+      {% if project.category %}
+      <span class="badge badge-pill" 
+            style="background-color: {% if project.category == 'finance' %}rgba(0, 123, 255, 0.1){% elsif project.category == 'ml' %}rgba(40, 167, 69, 0.1){% elsif project.category == 'data' %}rgba(108, 117, 125, 0.1){% elsif project.category == 'viz' %}rgba(255, 193, 7, 0.1){% else %}rgba(108, 117, 125, 0.1){% endif %}; 
+                   color: {% if project.category == 'finance' %}#007bff{% elsif project.category == 'ml' %}#28a745{% elsif project.category == 'data' %}#6c757d{% elsif project.category == 'viz' %}#ffc107{% else %}#6c757d{% endif %}; 
+                   margin-bottom: 10px; 
+                   padding: 3px 10px;">
+        {% if project.category == 'finance' %}Financial Analysis
+        {% elsif project.category == 'ml' %}Machine Learning
+        {% elsif project.category == 'data' %}Data Analysis
+        {% elsif project.category == 'viz' %}Visualization
+        {% else %}{{ project.category | capitalize }}
+        {% endif %}
+      </span>
+      {% endif %}
+      
       <!-- 프로젝트 제목 -->
-      <h5 class="card-title">{{ project_name }}</h5>
+      <h5 class="card-title" style="{% if project.featured %}font-size: 1.3rem; font-weight: 600;{% endif %}">{{ project_name }}</h5>
       
       <!-- 프로젝트 설명 -->
       <p class="card-text">{{ project_desc }}</p>
@@ -23,18 +47,27 @@
       <!-- 기술 스택 배지 -->
       <div class="mb-3">
         {% for tool in project_tools %}
-        <span class="badge badge-pill badge-light text-dark mr-2 mb-2 py-1 px-2" style="border: 1px solid #ddd;">{{ tool }}</span>
+        <span class="badge badge-pill {% if project.featured %}badge-primary{% else %}badge-light text-dark{% endif %} mr-2 mb-2 py-1 px-2" 
+              style="{% if project.featured %}background-color: rgba(0, 123, 255, 0.1); color: #007bff;{% else %}border: 1px solid #ddd;{% endif %}">
+          {{ tool }}
+        </span>
         {% endfor %}
       </div>
       
       <!-- 더 알아보기 링크 -->
-      <small class="text-muted">
-        {% if external %}
-        <i class="fas fa-external-link-alt mr-1"></i> 외부 링크
-        {% else %}
-        더 알아보기 <i class="fas fa-arrow-right ml-1"></i>
+      <div class="d-flex justify-content-between align-items-center">
+        <small class="text-muted">
+          {% if external %}
+          <i class="fas fa-external-link-alt mr-1"></i> 외부 링크
+          {% else %}
+          더 알아보기 <i class="fas fa-arrow-right ml-1"></i>
+          {% endif %}
+        </small>
+        
+        {% if project.featured %}
+        <small class="text-primary font-weight-bold">추천 프로젝트</small>
         {% endif %}
-      </small>
+      </div>
     </div>
   </a>
 </div>
