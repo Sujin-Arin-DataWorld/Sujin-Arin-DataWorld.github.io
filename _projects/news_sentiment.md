@@ -1,7 +1,7 @@
 ---
 name: Financial News Sentiment Analysis Project
 tools: [Python, NLP, FinBERT, AlphaVantage, GDELTDoc, Data Visualization]
-image: /assets/images/financial-sentiment-analysis.jpg
+image: /assets/images/financial-sentiment-analysis.png
 description: Sentiment analysis of 6,584 financial and economic news articles collected from January 1 to March 20, 2025 using keyword-based search
 ---
 
