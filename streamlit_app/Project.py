@@ -169,6 +169,7 @@ st.markdown("""
 ✅ Echte Wirtschaftsindikatoren wie **Staatsanleihenrenditen**, **Erdgaspreise** und **Dollar-Index** sind für bessere Vorhersagen integriert.
 """)
 
+df = load_data()
 
 # 유틸리티 함수들
 # 경제 및 감성 지표 컬럼 목록 (전역 변수로 정의)
