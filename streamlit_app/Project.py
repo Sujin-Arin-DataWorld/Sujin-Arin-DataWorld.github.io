@@ -17,16 +17,6 @@ from scipy import stats
 warnings.filterwarnings('ignore', category=UserWarning)
 warnings.filterwarnings('ignore', category=FutureWarning)
 
-@st.cache_data(ttl=3000, show_spinner=False)
-def load_data():
-  try: 
-    df = pd.read_csv("streamlit_app/data/final_merged_data.csv")
-    return df
-  except FileNotFoundError:
-    st.error("Can't find the file. Please verify the path: streamlit_app/data/final_merged_data.csv")
-    return None
-
-
 @st.cache_data(ttl=3600, show_spinner=False)
 def calculate_correlations(data, category, feature_cols, num_indicators):
     """상관관계 계산 결과를 캐싱하는 함수"""
@@ -171,9 +161,6 @@ st.markdown("""
 
 df = load_data()
 
-if df is not None:
-    # preprocess_data 함수의 결과를 저장하는 부분 추가
-    df, daily_avg_prices, daily_indicators = preprocess_data(df)
 # 유틸리티 함수들
 # 경제 및 감성 지표 컬럼 목록 (전역 변수로 정의)
 economic_columns = [
