@@ -20,10 +20,10 @@ warnings.filterwarnings('ignore', category=FutureWarning)
 @st.cache_data(ttl=3000, show_spinner=False)
 def load_data():
   try: 
-    df= pd.read_csv("./data/final_merged_data.csv")
+    df = pd.read_csv("streamlit_app/data/final_merged_data.csv")
     return df
   except FileNotFoundError:
-    st.error("Can't find the file. Please verify the path: ./data/final_merged_data.csv")
+    st.error("Can't find the file. Please verify the path: streamlit_app/data/final_merged_data.csv")
     return None
 
 
