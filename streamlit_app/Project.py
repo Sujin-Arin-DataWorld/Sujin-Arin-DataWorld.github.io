@@ -20,7 +20,8 @@ warnings.filterwarnings('ignore', category=FutureWarning)
 @st.cache_data(ttl=3000, show_spinner=False)
 def load_data():
   try: 
-    return pd.read_csv("./data/final_merged_data.csv")
+    df= pd.read_csv("./data/final_merged_data.csv")
+    return df
   except FileNotFoundError:
     st.error("Can't find the file. Please verify the path: ./data/final_merged_data.csv")
     return None
@@ -168,6 +169,9 @@ st.markdown("""
 ✅ Echte Wirtschaftsindikatoren wie **Staatsanleihenrenditen**, **Erdgaspreise** und **Dollar-Index** sind für bessere Vorhersagen integriert.
 """)
 
+df = load_data()
+if df is not None:
+    df, daily_avg_prices, daily_indicators = preprocess_data(df)
 # 유틸리티 함수들
 # 경제 및 감성 지표 컬럼 목록 (전역 변수로 정의)
 economic_columns = [
