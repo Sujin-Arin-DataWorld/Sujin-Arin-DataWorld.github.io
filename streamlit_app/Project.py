@@ -14,7 +14,18 @@ import optuna
 import warnings
 import matplotlib.dates as mdates
 from scipy import stats
-warnings.filterwarnings('ignore')
+warnings.filterwarnings('ignore', category=UserWarning)
+warnings.filterwarnings('ignore', category=FutureWarning)
+
+@st.cache_data(ttl=3000, show_spinner=False)
+def load_data():
+  try: 
+    return pd.read_csv("./data/final_merged_data.csv")
+  except FileNotFoundError:
+    st.error("Can't find the file. Please verify the path: ./data/final_merged_data.csv")
+    return None
+
+
 @st.cache_data(ttl=3600, show_spinner=False)
 def calculate_correlations(data, category, feature_cols, num_indicators):
     """상관관계 계산 결과를 캐싱하는 함수"""
