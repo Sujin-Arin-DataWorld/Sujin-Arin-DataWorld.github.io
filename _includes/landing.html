@@ -332,7 +332,6 @@
   </div>
 </div>
 <!-- 여정 섹션 --><!-- 개선된 여정 섹션 -->
-<!-- 여정 섹션 -->
 <div class="container mt-5 mb-5 fade-in-element">
   <div class="section-header text-center mb-5">
     <h2 class="section-title" style="font-weight: 700; color: var(--text-primary); margin-bottom: 15px;">My Data Analyst Journey</h2>
@@ -451,6 +450,142 @@
   </div>
 </div>
 
+<!-- 여정 시각화를 위한 스타일 -->
+<style>
+.journey-visualization {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.journey-visualization:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.journey-path {
+  padding: 10px 0;
+}
+
+.journey-step {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.journey-step:last-child {
+  margin-bottom: 0;
+}
+
+.journey-milestone {
+  position: relative;
+  min-width: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.milestone-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 0 4px rgba(86, 101, 233, 0.2);
+  transition: all 0.3s ease;
+}
+
+.journey-step:hover .milestone-dot {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 6px rgba(86, 101, 233, 0.3);
+}
+
+.milestone-line {
+  position: absolute;
+  top: 22px;
+  width: 3px;
+  height: calc(100% + 30px);
+  background: linear-gradient(to bottom, rgba(86, 101, 233, 0.7), rgba(162, 113, 248, 0.3));
+  z-index: 1;
+}
+
+.journey-step:last-child .milestone-line {
+  display: none;
+}
+
+.journey-details {
+  padding-left: 20px;
+  padding-bottom: 5px;
+}
+
+.journey-year {
+  font-weight: 700;
+  color: #5665E9;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  background: linear-gradient(90deg, #5665E9, #A271F8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.journey-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  margin-bottom: 5px;
+}
+
+.journey-description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.future-step {
+  opacity: 0.75;
+}
+
+.future-step .journey-description {
+  font-style: italic;
+}
+
+/* Hover effects */
+.journey-step:hover .journey-details {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
+
+.journey-step:not(:hover) .journey-details {
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .journey-year {
+    font-size: 1rem;
+  }
+  
+  .journey-title {
+    font-size: 0.95rem;
+  }
+  
+  .journey-description {
+    font-size: 0.85rem;
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .milestone-dot {
+    box-shadow: 0 0 0 4px rgba(86, 101, 233, 0.3);
+  }
+  
+  .journey-step:hover .milestone-dot {
+    box-shadow: 0 0 0 6px rgba(86, 101, 233, 0.4);
+  }
+}
+</style>
+
 <!-- 최근 활동 타임라인 - 수정된 버전 -->
 <div class="container mt-5 mb-5 fade-in-element">
   <div class="section-header text-center mb-5">
@@ -490,3 +625,136 @@
     </div>
   </div>
 </div>
+
+<!-- 새로운 타임라인 스타일 -->
+<style>
+/* 새로운 타임라인 스타일 */
+.timeline-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background: linear-gradient(to bottom, rgba(86, 101, 233, 0.3), rgba(162, 113, 248, 0.3));
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  border-radius: 4px;
+}
+
+.timeline-block {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  left: 0;
+  margin-bottom: 30px;
+}
+
+.timeline-block:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-dot {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  background-color: #5665E9;
+  border-radius: 50%;
+  top: 15px;
+  z-index: 1;
+  box-shadow: 0 0 0 4px rgba(86, 101, 233, 0.2);
+  transition: all 0.3s ease;
+}
+
+.timeline-block:nth-child(odd) .timeline-dot {
+  right: -12px;
+}
+
+.timeline-block:nth-child(even) .timeline-dot {
+  left: -12px;
+}
+
+.timeline-content {
+  padding: 20px;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline-content::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 15px;
+  background-color: inherit;
+  transform: rotate(45deg);
+}
+
+.timeline-block:nth-child(odd) .timeline-content::after {
+  right: -10px;
+}
+
+.timeline-block:nth-child(even) .timeline-content::after {
+  left: -10px;
+}
+
+.timeline-date {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  color: var(--text-muted);
+}
+
+.timeline-block:hover .timeline-dot {
+  transform: scale(1.3);
+}
+
+.timeline-block:hover .timeline-content {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 반응형 타임라인 */
+@media screen and (max-width: 768px) {
+  .timeline-container::after {
+    left: 31px;
+  }
+  
+  .timeline-block {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    left: 0 !important;
+  }
+  
+  .timeline-dot {
+    left: 17px !important;
+    right: auto !important;
+  }
+  
+  .timeline-content::after {
+    left: -10px !important;
+    right: auto !important;
+  }
+}
+
+/* 다크모드에서 그림자 조정 */
+@media (prefers-color-scheme: dark) {
+  .timeline-content {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .timeline-block:hover .timeline-content {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  }
+}
+</style>
