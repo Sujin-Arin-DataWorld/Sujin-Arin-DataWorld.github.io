@@ -236,72 +236,56 @@
 
 <!-- 기술 스택 섹션 -->
 <!-- Tech Stack Section -->
-<!-- Tech Stack Section -->
 <div class="container mt-5 mb-5 fade-in-element">
   <div class="section-header text-center mb-5">
     <h2 class="section-title" style="font-weight: 700; color: var(--text-primary); margin-bottom: 15px;">Tech Stack</h2>
     <div class="section-divider" style="width: 70px; height: 4px; background: linear-gradient(90deg, #5665E9, #A271F8); margin: 0 auto;"></div>
   </div>
-  
-  <div class="tech-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 30px; justify-content: center; max-width: 900px; margin: 0 auto;">
-    <!-- Python -->
-    <div class="tech-item text-center">
-      <div style="height: 80px; display: flex; align-items: center; justify-content: center;">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="max-height: 70px;">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="tech-stack-container p-4 rounded" style="border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); background-color: var(--card-bg);">
+        <div class="row text-center">
+          <div class="col-4 col-md-2 mb-4">
+            <div class="tech-item" style="transition: transform 0.3s ease;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="img-fluid tech-icon" style="max-height: 60px; filter: var(--tech-icon-filter);">
+              <p class="mt-2 mb-0" style="color: var(--text-primary); font-weight: 500;">Python</p>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 mb-4">
+            <div class="tech-item" style="transition: transform 0.3s ease;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="img-fluid tech-icon" style="max-height: 60px; filter: var(--tech-icon-filter);">
+              <p class="mt-2 mb-0" style="color: var(--text-primary); font-weight: 500;">Pandas</p>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 mb-4">
+            <div class="tech-item" style="transition: transform 0.3s ease;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="img-fluid tech-icon" style="max-height: 60px; filter: var(--tech-icon-filter);">
+              <p class="mt-2 mb-0" style="color: var(--text-primary); font-weight: 500;">NumPy</p>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 mb-4">
+            <div class="tech-item" style="transition: transform 0.3s ease;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" class="img-fluid tech-icon" style="max-height: 60px; filter: var(--tech-icon-filter);">
+              <p class="mt-2 mb-0" style="color: var(--text-primary); font-weight: 500;">Scikit-learn</p>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 mb-4">
+            <div class="tech-item" style="transition: transform 0.3s ease;">
+              <img src="https://www.knime.com/sites/default/files/knime_logo.png" alt="KNIME" class="img-fluid tech-icon" style="max-height: 60px; filter: var(--tech-icon-filter);">
+              <p class="mt-2 mb-0" style="color: var(--text-primary); font-weight: 500;">KNIME</p>
+            </div>
+          </div>
+          <div class="col-4 col-md-2 mb-4">
+            <div class="tech-item" style="transition: transform 0.3s ease;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="img-fluid tech-icon" style="max-height: 60px; filter: var(--tech-icon-filter);">
+              <p class="mt-2 mb-0" style="color: var(--text-primary); font-weight: 500;">SQL</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <p style="margin-top: 10px; font-weight: 500; color: var(--text-primary);">Python</p>
-    </div>
-    
-    <!-- Pandas -->
-    <div class="tech-item text-center">
-      <div style="height: 80px; display: flex; align-items: center; justify-content: center;">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" style="max-height: 70px;">
-      </div>
-      <p style="margin-top: 10px; font-weight: 500; color: var(--text-primary);">Pandas</p>
-    </div>
-    
-    <!-- NumPy -->
-    <div class="tech-item text-center">
-      <div style="height: 80px; display: flex; align-items: center; justify-content: center;">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" style="max-height: 70px;">
-      </div>
-      <p style="margin-top: 10px; font-weight: 500; color: var(--text-primary);">NumPy</p>
-    </div>
-    
-    <!-- Scikit-learn -->
-    <div class="tech-item text-center">
-      <div style="height: 80px; display: flex; align-items: center; justify-content: center;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" style="max-height: 70px;">
-      </div>
-      <p style="margin-top: 10px; font-weight: 500; color: var(--text-primary);">Scikit-learn</p>
-    </div>
-    
-    <!-- KNIME -->
-    <div class="tech-item text-center">
-      <div style="height: 80px; display: flex; align-items: center; justify-content: center; background-color: white; border-radius: 8px; padding: 5px;">
-        <img src="https://knime.com/sites/default/files/2022-04/knime-logo.svg" alt="KNIME" style="max-height: 60px;">
-      </div>
-      <p style="margin-top: 10px; font-weight: 500; color: var(--text-primary);">KNIME</p>
-    </div>
-    
-    <!-- SQL -->
-    <div class="tech-item text-center">
-      <div style="height: 80px; display: flex; align-items: center; justify-content: center;">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" style="max-height: 70px;">
-      </div>
-      <p style="margin-top: 10px; font-weight: 500; color: var(--text-primary);">SQL</p>
     </div>
   </div>
 </div>
-
-<style>
-.tech-item {
-  transition: transform 0.3s ease;
-}
-.tech-item:hover {
-  transform: translateY(-5px);
-}
-</style>
 <!-- 서비스 섹션 -->
 <div class="py-5 mt-5 fade-in-element service-section" style="background: linear-gradient(to right, rgba(86, 101, 233, 0.05), rgba(162, 113, 248, 0.05)); border-radius: 12px;">
   <div class="container">
