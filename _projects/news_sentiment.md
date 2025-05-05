@@ -37,9 +37,18 @@ The optimized models were used to analyze sentiment trends across different fina
 ## Key Findings
 (This section will detail the key findings from your sentiment analysis)
 
-## Interactive Dashboard & Dataset
-- **[Download Dataset (CSV)](/assets/data/news_sentiment.csv)**: Get the complete dataset used in this analysis to perform your own exploration.
-- **[View Interactive Dashboard](https://sujin-arin-dataworldappio-4zijytn9sndcbia7s69mab.streamlit.app/)**: Explore the data through our interactive Streamlit dashboard to see sentiment distributions, keyword analysis, and trend visualization.
+## 🚀 Interactive Dashboard & Dataset
+
+### Explore Our Live Analysis Dashboard
+- **[🔍 View Interactive Dashboard](https://sujin-arin-dataworldappio-4zijytn9sndcbia7s69mab.streamlit.app/)**: Experience the complete analysis through our interactive Streamlit dashboard featuring:
+  - Real-time sentiment trend visualization
+  - Keyword frequency analysis
+  - Sector-specific sentiment comparisons
+  - Advanced filtering options
+  - Custom visualization capabilities
+
+### Resources
+- **[📊 Download Complete Dataset (CSV)](/assets/data/financial_news_sentiment.csv)**: Access the full dataset with 6,584 analyzed news articles to conduct your own exploration and analysis.
 
 ## Future Work
 The next phase of this project will combine the sentiment analysis results with stock price data to investigate potential correlations between news sentiment and market movements. This comprehensive analysis will help understand how media sentiment might influence or reflect market behavior across different sectors and timeframes.
@@ -56,4 +65,4 @@ The next phase of this project will combine the sentiment analysis results with 
 - Streamlit: Interactive data dashboard
 - Optuna: Hyperparameter optimization framework
 
-[View Complete Analysis](#) <!-- Link to be added later -->
+
