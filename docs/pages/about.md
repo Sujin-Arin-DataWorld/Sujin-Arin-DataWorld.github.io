@@ -20,7 +20,7 @@ weight: 1
 
 <div class="row mt-4 mb-5">
   <div class="col-md-12 text-center">
-    <a class="btn btn-success btn-lg" href="/assets/pdf/Sujin_Park_CV.pdf" target="_blank">
+    <a class="btn btn-success btn-lg" href="/assets/pdf/SujinPark_CV(EN_DE).pdf" target="_blank">
       <i class="fas fa-file-download"></i> Download My CV
     </a>
   </div>
