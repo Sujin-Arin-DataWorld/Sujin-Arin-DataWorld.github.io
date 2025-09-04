@@ -1,7 +1,7 @@
 ---
 name: Sales Data Analysis (SQL)
 tools: [SQL, Database]
-image: /assets/images/sql-project-thumbnail.png
+image: /assets/img/sql-project-thumbnail.png
 description: Sales data analysis using SQL – customer & product reports, RFM segmentation, and ABC/Pareto classification
 ---
 
