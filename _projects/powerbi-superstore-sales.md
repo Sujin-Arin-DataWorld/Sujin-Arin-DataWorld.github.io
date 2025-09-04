@@ -25,7 +25,7 @@ description: Interactive sales dashboard built with Power BI, analyzing revenue,
 - Monthly sales trend vs previous month
 - Sales by Category, Segment, Region, and State
 
-![Overview](/assets/images/sales-overview.jpg)
+![Overview](/assets/img/sales-overview.jpg)
 
 ---
 
@@ -35,7 +35,7 @@ description: Interactive sales dashboard built with Power BI, analyzing revenue,
 - Profit% trend over time
 - Customer count & AOV by sub-category
 
-![Category](/assets/images/sales-category.jpg)
+![Category](/assets/img/sales-category.jpg)
 
 ---
 
@@ -45,7 +45,7 @@ description: Interactive sales dashboard built with Power BI, analyzing revenue,
 - Loss trends by month
 - Loss analysis by quantity & category
 
-![Loss-Making](/assets/images/sales-loss.jpg)
+![Loss-Making](/assets/img/sales-loss.jpg)
 
 ---
 
@@ -55,7 +55,7 @@ description: Interactive sales dashboard built with Power BI, analyzing revenue,
 - Sub-category trends
 - Category-level profitability
 
-![Profitable](/assets/images/sales-profitable.jpg)
+![Profitable](/assets/img/sales-profitable.jpg)
 
 ---
 
