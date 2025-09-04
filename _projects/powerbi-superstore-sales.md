@@ -1,7 +1,7 @@
 ---
 name: Superstore Sales Dashboard (Power BI)
 tools: [Power BI, Data Visualization]
-image: /assets/img/sales-overview.png
+image: /assets/img/sales-overview.jpg
 description: Interactive sales dashboard built with Power BI, analyzing revenue, profit, and product performance
 ---
 
