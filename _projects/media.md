@@ -10,7 +10,7 @@ image: /assets/img/overview.jpg
   
 ---
 
-##🗂️ Data Sources
+🗂️ Data Sources
 
 Platform Performance (Meta, Snapchat, TikTok, YouTube)
 Campaign Metrics (impressions, completions, clicks, video starts)
