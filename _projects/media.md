@@ -1,5 +1,5 @@
 ---
-name : Priority Action Matrix: CTR/VCR Driven Platform-Advertiser Strategy
+name: Priority Action Matrix: CTR/VCR Driven Platform-Advertiser Strategy
 tools: [Power BI, Data Visualization]
 image: /assets/img/overview.jpg
 description: Analyze multi-platform advertising performance using CTR/VCR metrics to optimize budget allocation and identify action priorities for 33 advertisers across 2K campaig
