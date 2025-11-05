@@ -1,19 +1,22 @@
-Priority Action Matrix: CTR/VCR Driven Platform-Advertiser Strategy
-📊 Overview
+---
+name : Priority Action Matrix: CTR/VCR Driven Platform-Advertiser Strategy
+image: /assets/img/overview.jpg
+---
+## 📊 Overview
 
-Tool: Tableau / Power BI
-Period: January 1, 2017 - December 31, 2017
-Goal: Analyze multi-platform advertising performance using CTR/VCR metrics to optimize budget allocation and identify action priorities for 33 advertisers across 2K campaigns
+- **Tool**: Power BI, Python
+- **Period**: January 1, 2017 - December 31, 2017
+- **Goal**: Analyze multi-platform advertising performance using CTR/VCR metrics to optimize budget allocation and identify action priorities for 33 advertisers across 2K campaig
 
-🗂️ Data Sources
+##🗂️ Data Sources
 
 Platform Performance (Meta, Snapchat, TikTok, YouTube)
 Campaign Metrics (impressions, completions, clicks, video starts)
 Device Data (Smartphone, Tablet, Desktop, SmartTV)
 Advertiser Performance (33 advertisers, 2K campaigns)
 
-
-📈 Dashboard Pages
+---
+## 📈 Dashboard Pages
 1. Overview
 
 KPIs: 34bn Impressions (+7.1%), 6bn Completions (+7.6%), 33 Advertisers (+1), 2K Campaigns (+253)
@@ -24,7 +27,7 @@ Device Distribution: Smartphone 41.51%, Tablet 29.3%, Desktop 17.55%, SmartTV 11
 
 ![Overview](/assets/img/overview.jpg)
 
-
+---
 2. Platform & Device Analysis
 
 Efficiency Matrix: VCR vs Traffic Volume bubble chart with strategic quadrants (Double Down, Optimize, Test More)
@@ -33,7 +36,7 @@ Day-of-Week Heatmap: Best/Good/Average/Avoid classification for platform-day com
 Platform Efficiency: YouTube 62-63% VCR consistent across devices, TikTok Desktop 35%, Meta/Snapchat <20%
 
 ![Overview](/assets/img/platformDevice.jpg)
-
+---
 3. Platform & Device (2)
 
 VCR Range Distribution: 60%+ range shows YouTube 48.88% and Meta 48% concentration
@@ -42,7 +45,7 @@ Impressions by Device (log): Meta highest exposure (10^9.8-10^10.1), TikTok Smar
 Monthly VCR Stream: October peak across all platforms, gradual growth from January to December
 
 ![Overview](/assets/img/platformDevice(2).jpg)
-
+---
 4. Advertiser Action Plan
 
 Critical Status: 67 advertisers with 0% VCR requiring urgent intervention, 7 normal performers
@@ -55,17 +58,17 @@ Action Classification:
 🔵 OPTIMIZE: 2 advertisers (78-87% platform gap)
 🟡 EXPAND: 3 advertisers (73-87% VCR on single platform)
 
-
+---
 Detailed Recommendations: Platform reallocation, creative overhaul, budget redistribution strategies
 
 ![Overview](/assets/img/Advertiser.jpg)
 
-📥 Download
+##📥 Download
 
-[Download Power BI file (.pbix)](/reports/media_anaysis.pbit)
+- [Download Power BI file (.pbix)](/reports/media_anaysis.pbit)
 
-
-✅ Key Insights
+---
+##✅ Key Insights
 Platform Strategy
 
 YouTube: Clear winner with 60-66% VCR across all devices, ideal for brand awareness campaigns
@@ -97,10 +100,11 @@ TikTok: 25% (growth potential, balanced performance)
 Meta: 15% (performance marketing, optimize creative)
 Snapchat: 10% (experimental, Gen Z targeting)
 
-
-🎯 Business Impact
+---
+## 🎯 Business Impact
 
 Efficiency Gain: 18% ROAS improvement through platform optimization
 Cost Reduction: 12% ad spend saved by reallocating from underperforming platforms
 Critical Case Resolution: 67 → 7 advertisers in critical status (within 3 months)
 Reporting Time: 80% reduction (8 hours → 1.5 hours) via automated dashboard
+---
