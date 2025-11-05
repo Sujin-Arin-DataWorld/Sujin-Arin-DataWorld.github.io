@@ -74,7 +74,9 @@ Detailed Recommendations: Platform reallocation, creative overhaul, budget redis
 [Download Power BI file (.pbix)](/reports/media_anaysis.pbit)
 
 ---
-##✅ Key Insights
+
+✅ Key Insights
+
 Platform Strategy
 
 YouTube: Clear winner with 60-66% VCR across all devices, ideal for brand awareness campaigns
