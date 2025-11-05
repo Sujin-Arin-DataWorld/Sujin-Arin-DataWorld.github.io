@@ -54,7 +54,7 @@ description: Analyze multi-platform advertising performance using CTR/VCR metric
 - **Impressions by Device (log)**: Meta highest exposure (10^9.8-10^10.1), TikTok SmartTV lowest (10^3.6)
 - **Monthly VCR Stream**: October peak across all platforms, gradual growth from January to December
 
-![Platform Device 2](/assets/img/platformDevice_2_.jpg)
+![Platform Device 2](/assets/img/platformDevice(2).jpg)
 
 ---
 
