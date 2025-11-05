@@ -16,6 +16,7 @@ Device Data (Smartphone, Tablet, Desktop, SmartTV)
 Advertiser Performance (33 advertisers, 2K campaigns)
 
 ---
+
 ## 📈 Dashboard Pages
 1. Overview
 
@@ -28,6 +29,7 @@ Device Distribution: Smartphone 41.51%, Tablet 29.3%, Desktop 17.55%, SmartTV 11
 ![Overview](/assets/img/overview.jpg)
 
 ---
+
 2. Platform & Device Analysis
 
 Efficiency Matrix: VCR vs Traffic Volume bubble chart with strategic quadrants (Double Down, Optimize, Test More)
@@ -36,7 +38,9 @@ Day-of-Week Heatmap: Best/Good/Average/Avoid classification for platform-day com
 Platform Efficiency: YouTube 62-63% VCR consistent across devices, TikTok Desktop 35%, Meta/Snapchat <20%
 
 ![Overview](/assets/img/platformDevice.jpg)
+
 ---
+
 3. Platform & Device (2)
 
 VCR Range Distribution: 60%+ range shows YouTube 48.88% and Meta 48% concentration
@@ -45,6 +49,7 @@ Impressions by Device (log): Meta highest exposure (10^9.8-10^10.1), TikTok Smar
 Monthly VCR Stream: October peak across all platforms, gradual growth from January to December
 
 ![Overview](/assets/img/platformDevice(2).jpg)
+
 ---
 4. Advertiser Action Plan
 
@@ -58,11 +63,10 @@ Action Classification:
 🔵 OPTIMIZE: 2 advertisers (78-87% platform gap)
 🟡 EXPAND: 3 advertisers (73-87% VCR on single platform)
 
----
 Detailed Recommendations: Platform reallocation, creative overhaul, budget redistribution strategies
 
 ![Overview](/assets/img/Advertiser.jpg)
-
+---
 ##📥 Download
 
 - [Download Power BI file (.pbix)](/reports/media_anaysis.pbit)
@@ -101,7 +105,7 @@ Meta: 15% (performance marketing, optimize creative)
 Snapchat: 10% (experimental, Gen Z targeting)
 
 ---
-## 🎯 Business Impact
+🎯 Business Impact
 
 Efficiency Gain: 18% ROAS improvement through platform optimization
 Cost Reduction: 12% ad spend saved by reallocating from underperforming platforms
