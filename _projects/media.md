@@ -1,6 +1,8 @@
 ---
 name : Priority Action Matrix: CTR/VCR Driven Platform-Advertiser Strategy
+tools: [Power BI, Data Visualization]
 image: /assets/img/overview.jpg
+description: Analyze multi-platform advertising performance using CTR/VCR metrics to optimize budget allocation and identify action priorities for 33 advertisers across 2K campaig
 ---
 ## 📊 Overview
 
@@ -8,12 +10,11 @@ image: /assets/img/overview.jpg
 - **Period**: January 1, 2017 - December 31, 2017
 - **Goal**: Analyze multi-platform advertising performance using CTR/VCR metrics to optimize budget allocation and identify action priorities for 33 advertisers across 2K campaig
   
----
 
-🗂️ Data Sources
+##🗂️ Data Sources
 
 Platform Performance (Meta, Snapchat, TikTok, YouTube)
-Campaign Metrics (impressions, completions, clicks, video starts)
+Campaign Metrics (impressions, completions_view, clicks)
 Device Data (Smartphone, Tablet, Desktop, SmartTV)
 Advertiser Performance (33 advertisers, 2K campaigns)
 
