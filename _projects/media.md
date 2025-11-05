@@ -69,9 +69,9 @@ Detailed Recommendations: Platform reallocation, creative overhaul, budget redis
 
 ![Overview](/assets/img/Advertiser.jpg)
 ---
-##📥 Download
+📥 Download
 
-- [Download Power BI file (.pbix)](/reports/media_anaysis.pbit)
+[Download Power BI file (.pbix)](/reports/media_anaysis.pbit)
 
 ---
 ##✅ Key Insights
