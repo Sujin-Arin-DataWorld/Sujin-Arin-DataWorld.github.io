@@ -1,0 +1,19 @@
+- name: Python (pandas · numpy · scikit-learn)
+  percentage: 90
+  color: primary
+
+- name: SQL (PostgreSQL · BigQuery)
+  percentage: 85
+  color: info
+
+- name: TypeScript / React
+  percentage: 75
+  color: secondary
+
+- name: Jupyter · Streamlit
+  percentage: 90
+  color: success
+
+- name: Supabase · Postgres RLS
+  percentage: 70
+  color: warning

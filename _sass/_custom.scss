@@ -1,0 +1,347 @@
+// ════════════════════════════════════════════════════════════════════
+// Custom overlay — minimal EU/DE-leaning portfolio tone.
+// Loaded after portfolYOU theme; overrides selected styles.
+// ════════════════════════════════════════════════════════════════════
+
+@import url('https://rsms.me/inter/inter.css');
+
+// ─── Design tokens ───────────────────────────────────────────────────
+$accent:       #1f6feb;   // GitHub-blue (sober, EU-friendly)
+$accent-soft:  #58a6ff;
+$ink:          #1a1d21;   // near-black, warmer than pure black
+$ink-soft:     #4a4f55;
+$paper:        #fafbfc;
+$paper-card:   #ffffff;
+$border:       #e5e7eb;
+
+$dark-bg:      #0d1117;   // GitHub-dark
+$dark-card:    #161b22;
+$dark-border: #30363d;
+$dark-ink:     #c9d1d9;
+$dark-ink-soft:#8b949e;
+
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 20px;
+
+// ─── Global typography ───────────────────────────────────────────────
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.005em;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  line-height: 1.2;
+}
+
+// Hero-scale display headings
+.display-hero {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+// Mono for code & tech labels
+code, pre, .mono {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular,
+               Menlo, Monaco, "Courier New", monospace;
+}
+
+// ─── Light theme polish ──────────────────────────────────────────────
+[data-theme="light"] body {
+  background-color: $paper;
+  color: $ink;
+}
+
+[data-theme="light"] .text-themed { color: $ink; }
+[data-theme="light"] .text-muted   { color: $ink-soft !important; }
+[data-theme="light"] .bg-themed    { background-color: $paper-card; }
+
+// ─── Dark theme polish (overrides _theme-dark.scss) ──────────────────
+[data-theme="dark"] body {
+  background-color: $dark-bg;
+  color: $dark-ink;
+}
+
+[data-theme="dark"] .text-themed   { color: $dark-ink; }
+[data-theme="dark"] .text-muted    { color: $dark-ink-soft !important; }
+[data-theme="dark"] .bg-themed     { background-color: $dark-card; }
+
+[data-theme="dark"] .card {
+  background-color: $dark-card;
+  border-color: $dark-border;
+}
+
+// ─── Container width ─────────────────────────────────────────────────
+main.container {
+  max-width: 1080px;
+}
+
+// ─── Navbar ──────────────────────────────────────────────────────────
+.navbar {
+  padding: 1.25rem 0;
+  margin-bottom: 1.5rem;
+}
+
+.navbar-brand h5 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: 0;
+}
+
+.nav-item.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+}
+
+// Active underline accent
+[data-theme="light"] .link-after,
+[data-theme="light"] .nav-item.active::after,
+[data-theme="light"] .nav-link:hover::after {
+  background: $accent;
+}
+[data-theme="dark"] .link-after,
+[data-theme="dark"] .nav-item.active::after,
+[data-theme="dark"] .nav-link:hover::after {
+  background: $accent-soft;
+}
+
+// ─── Hero section ────────────────────────────────────────────────────
+.hero {
+  padding: 3rem 0 4rem;
+
+  .hero-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: $accent;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    @extend .display-hero;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-lede {
+    font-size: 1.2rem;
+    max-width: 38rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      i { color: $accent; }
+    }
+  }
+}
+
+[data-theme="dark"] .hero {
+  .hero-eyebrow,
+  .hero-meta .meta-item i { color: $accent-soft; }
+}
+
+// ─── Buttons (replace inline styles) ─────────────────────────────────
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: $radius-sm;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  border: 1px solid transparent;
+
+  &.btn-primary-cta {
+    background: $accent;
+    color: white !important;
+
+    &:hover {
+      background: darken($accent, 6%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba($accent, 0.25);
+    }
+  }
+
+  &.btn-ghost {
+    background: transparent;
+    color: $ink !important;
+    border-color: $border;
+
+    &:hover {
+      background: $paper-card;
+      border-color: $ink-soft;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+[data-theme="dark"] .btn-cta.btn-ghost {
+  color: $dark-ink !important;
+  border-color: $dark-border;
+
+  &:hover {
+    background: $dark-card;
+    border-color: $dark-ink-soft;
+  }
+}
+
+// ─── Project cards ───────────────────────────────────────────────────
+.card-columns {
+  column-count: 2;
+  column-gap: 1.5rem;
+
+  @media (max-width: 768px) { column-count: 1; }
+}
+
+.project.card {
+  border-radius: $radius-md;
+  border: 1px solid $border;
+  box-shadow: none;
+  margin-bottom: 1.5rem;
+  background: $paper-card;
+  break-inside: avoid;
+
+  .card-body { padding: 1.5rem; }
+
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+
+    i.fab.fa-github { font-size: 0.95rem; opacity: 0.6; }
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: $ink-soft;
+  }
+
+  .badge {
+    font-weight: 500;
+    font-size: 0.72rem;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+    padding: 0.3em 0.7em;
+    border-radius: 999px !important;
+    border-color: $border !important;
+    color: $ink-soft !important;
+    background: transparent;
+  }
+
+  &:hover:not(.post) {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px -16px rgba(0, 0, 0, 0.18);
+    border-color: rgba($accent, 0.5);
+  }
+}
+
+[data-theme="dark"] .project.card {
+  border-color: $dark-border;
+
+  .card-text { color: $dark-ink-soft; }
+
+  .badge {
+    border-color: $dark-border !important;
+    color: $dark-ink-soft !important;
+  }
+
+  &:hover:not(.post) {
+    border-color: rgba($accent-soft, 0.5);
+    box-shadow: 0 12px 32px -16px rgba(0, 0, 0, 0.6);
+  }
+}
+
+// ─── Section heading helper ──────────────────────────────────────────
+.section-heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 3rem 0 1.5rem;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 1.25rem;
+    background: $accent;
+    margin-right: 0.75rem;
+    vertical-align: -0.15rem;
+    border-radius: 2px;
+  }
+}
+
+[data-theme="dark"] .section-heading::before { background: $accent-soft; }
+
+// ─── Skills progress (subtler) ───────────────────────────────────────
+.progress {
+  height: 6px !important;
+  background-color: $border !important;
+  border-radius: 999px;
+}
+
+[data-theme="dark"] .progress { background-color: $dark-border !important; }
+
+.progress-bar { background-color: $accent !important; }
+[data-theme="dark"] .progress-bar { background-color: $accent-soft !important; }
+
+// ─── Footer ──────────────────────────────────────────────────────────
+footer {
+  padding-top: 3rem !important;
+  padding-bottom: 2rem !important;
+  border-top: 1px solid $border;
+  margin-top: 4rem;
+
+  small { font-size: 0.82rem; }
+}
+
+[data-theme="dark"] footer { border-top-color: $dark-border; }
+
+// ─── Profile circle (smaller, refined) ───────────────────────────────
+.circle-image {
+  border: 3px solid $paper-card;
+  box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.15);
+}
+[data-theme="dark"] .circle-image {
+  border-color: $dark-card;
+  box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.6);
+}
+
+// ─── Theme toggle (cleaner) ──────────────────────────────────────────
+#theme-toggler {
+  cursor: pointer;
+  font-size: 1rem;
+  &::before { font-size: 1.1rem; }
+}
+
+// ─── Reduce-motion respect ───────────────────────────────────────────
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

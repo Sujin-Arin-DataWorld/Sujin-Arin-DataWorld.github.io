@@ -1,0 +1,23 @@
+# ⚠️ 본인 실제 경력으로 채워주세요.
+# 가짜 정보 넣으면 채용 시 신뢰 잃습니다.
+# from / to: 연도만, "present" 가능
+# description: 1~3 문장, 임팩트 위주 (담당 → 사용 도구 → 결과/지표)
+
+- title: Data Analyst — Portfolio Projects
+  from: 2025
+  to: present
+  description: Built Wiesbaden citizen-dashboard mock-up (5 languages, OSM + open data),
+               Beleg-Brain SaaS prototype (Claude Vision + SKR03 classification),
+               and SkinStrategyLab recommendation engine. Stack — Python, TypeScript,
+               Supabase, Plotly, Leaflet.
+
+# 아래는 본인 실제 이력으로 교체:
+# - title: Data Analyst, Company X (City, DE)
+#   from: 2023
+#   to: 2025
+#   description: ...
+#
+# - title: MSc / BSc, University, Subject
+#   from: 2018
+#   to: 2022
+#   description: ...

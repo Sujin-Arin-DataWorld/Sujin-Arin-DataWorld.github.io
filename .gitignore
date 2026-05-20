@@ -1,9 +1,19 @@
-# Ruby Gems
-*.gem
+# Jekyll build artifacts (GitHub Pages rebuilds these — never commit)
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
 
-# Design Files
+# Ruby
+*.gem
+.bundle/
+vendor/
+
+# Design files
 *.psd
 *.ai
 
-# IntelliJ
-.idea
+# OS / editor
+.DS_Store
+.idea/
+*.swp

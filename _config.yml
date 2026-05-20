@@ -1,12 +1,78 @@
-title: "Sujin's Portfolio"  # 🌟 사이트 제목
-description: "Welcome to my portfolio website!"  # 🌟 사이트 설명
-url: "https://Sujin-Arin-DataWorld.github.io"  # 🌍 사이트 URL
+# ─── Site ──────────────────────────────────────────────────────────────
+title:        "Sujin Park · Data Analyst"
+description:  >-
+  Data analyst building public-sector dashboards, AI-powered SaaS,
+  and multilingual tools. Based in Germany, open to EU positions.
+url:          "https://Sujin-Arin-DataWorld.github.io"
+baseurl:      ""
+lang:         "en"
+open_new_tab: true
+
+# ─── Author ────────────────────────────────────────────────────────────
 author:
-  name: "Sujin-Arin Park"
-  email: sujin.arin.park@gmail.com
+  name:      "Sujin-Arin Park"
+  image:     /assets/images/profile.png
+  email:     sujin.arin.park@gmail.com
+  github:    Sujin-Arin-DataWorld
+  # ↓ 본인 핸들 채워 넣으세요 (없으면 줄 통째로 지우기)
+  # linkedin: your-linkedin-slug
+  # kaggle:   your-kaggle-username
+  # medium:   your-medium-username
 
+# ─── Plugins ───────────────────────────────────────────────────────────
 plugins:
+  - jemoji
   - jekyll-github-metadata
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
 
+# ─── Navbar ────────────────────────────────────────────────────────────
+nav_exclude:
+  - index.html
+  - pages/tags.html
+  - pages/404.html
+  - pages/index.md
 
+# ─── Posts / Permalinks ────────────────────────────────────────────────
+permalink: /blog/:title
 
+# ─── Collections ───────────────────────────────────────────────────────
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
+
+# ─── Defaults ──────────────────────────────────────────────────────────
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: false
+
+# ─── Analytics (optional) ──────────────────────────────────────────────
+analytics:
+  enabled: false
+  google:
+    tracking_id: ""
+
+# ─── Exclude from build ────────────────────────────────────────────────
+exclude:
+  - README.md
+  - LICENSE
+  - "*.log"
+  - "*.gemspec"
+  - docs/
+  - test/
+  - Gemfile
+  - Gemfile.lock
+  - screenshot.gif
+  - vendor/
+  - .jekyll-cache/
+  - node_modules/

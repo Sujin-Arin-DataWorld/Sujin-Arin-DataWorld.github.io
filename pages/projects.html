@@ -1,0 +1,55 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+weight: 1
+description: "Selected data, civic-tech, and AI projects by Sujin Park."
+---
+
+<header class="my-5">
+  <h1 class="display-hero text-themed">Projects</h1>
+  <p class="text-muted" style="max-width: 40rem; font-size: 1.1rem;">
+    Open-source work spanning public dashboards, AI-assisted bookkeeping,
+    multilingual learning tools, and financial analysis. Live demos linked
+    where deployed.
+  </p>
+</header>
+
+<div class="card-columns">
+  {% for project in site.data.projects %}
+    <div class="wow animated fadeIn" data-wow-delay=".15s">
+      <a href="{{ project.live | default: project.url }}"
+         target="_blank" rel="noopener"
+         class="project card text-themed">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="fab fa-github"></i>&nbsp; {{ project.name }}
+            {% if project.live %}
+              <i class="fas fa-external-link-alt ml-1" style="font-size:.75rem;opacity:.5"></i>
+            {% endif %}
+          </h5>
+          <p class="card-text">{{ project.description }}</p>
+          <p class="card-text">
+            {% for tool in project.tools %}
+              <span class="badge border">{{ tool }}</span>
+            {% endfor %}
+            {% if project.live %}
+              <span class="badge border">live demo</span>
+            {% endif %}
+          </p>
+          <p class="card-text mt-2">
+            <small class="text-muted">
+              <i class="fab fa-github"></i>
+              <a href="{{ project.url }}" target="_blank" rel="noopener"
+                 class="text-muted">source</a>
+              {% if project.live %}
+                &nbsp;·&nbsp; <a href="{{ project.live }}" target="_blank"
+                                 rel="noopener" class="text-muted">live demo ↗</a>
+              {% endif %}
+            </small>
+          </p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>

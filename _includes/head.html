@@ -12,15 +12,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ title }}">
-  <meta property="og:description" content="{{ description }}">
-  <meta property="og:image" content="{{ image }}">
-
-  <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}">
+  {%- comment -%} jekyll-seo-tag handles title, description, og:*, twitter cards. {%- endcomment -%}
+  {% seo %}
+  {% feed_meta %}
 
   <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
+  <link rel="preconnect" href="https://rsms.me" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
 
   <!-- Theme style -->
   <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>

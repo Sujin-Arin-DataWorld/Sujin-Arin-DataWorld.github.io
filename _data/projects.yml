@@ -1,0 +1,90 @@
+# Featured projects shown on home + /projects/.
+# Add/edit freely — order here = order on the page.
+# Set `featured: true` to show on the homepage's "Selected work".
+
+- name: Wiesbaden Lagebild v2.1
+  slug: public-verbesserung
+  description: >-
+    Citizen dashboard mock-up for the City of Wiesbaden — Data Analyst
+    application. Single-file HTML, 6 views, 5 languages (DE/EN/TR/UA/KR),
+    OSM + opendata.cloud.wiesbaden.de + Bundeskartellamt MTS-K.
+  url: https://github.com/Sujin-Arin-DataWorld/Public-Verbesserung
+  live: https://public-verbesserung.vercel.app
+  tools:
+    - javascript
+    - leaflet
+    - open data
+    - osm
+    - civic tech
+  featured: true
+
+- name: Beleg-Brain
+  slug: beleg-brain
+  description: >-
+    Receipt → SKR03 → GoBD-archive → DATEV/Lexoffice push. Built for German
+    GmbH bookkeeping with Claude Sonnet 4.6 Vision (~97% classification
+    accuracy). Vite + React 18 + TS + Tailwind, Supabase RLS, GoBD-compliant
+    hash chain.
+  url: https://github.com/Sujin-Arin-DataWorld/beleg-brain
+  tools:
+    - typescript
+    - react
+    - supabase
+    - claude vision
+    - saas
+  featured: true
+
+- name: SkinStrategyLab (skin-compass-engine)
+  slug: skin-compass-engine
+  description: >-
+    Multilingual skincare-recommendation engine. 10-axis skin reading →
+    archetype → personalized AM/PM routine with barrier-repair priority logic.
+    Tier-based product bundles, age/season/water-hardness adaptation.
+  url: https://github.com/Sujin-Arin-DataWorld/skin-compass-engine
+  live: https://skin-compass-engine.vercel.app
+  tools:
+    - typescript
+    - decision engine
+    - de/en/ko
+    - product
+  featured: true
+
+- name: ko_lernen
+  slug: ko-lernen
+  description: >-
+    Korean-learning Streamlit app, designed A1.1 → B2 for a German learner.
+    Vocabulary trainer, listening practice, spaced repetition. Tuned for daily
+    use by a non-native speaker living in Germany.
+  url: https://github.com/Sujin-Arin-DataWorld/ko_lernen
+  tools:
+    - python
+    - streamlit
+    - language learning
+  featured: true
+
+- name: c1_bestehen
+  slug: c1-bestehen
+  description: >-
+    German-C1 prep platform — vocabulary trainer with TELC-aligned word list
+    (15k+ entries) and listening practice. Streamlit, multi-page, custom TTS
+    cache.
+  url: https://github.com/Sujin-Arin-DataWorld/c1_bestehen
+  tools:
+    - python
+    - streamlit
+    - tts
+    - language learning
+  featured: true
+
+- name: finance
+  slug: finance
+  description: >-
+    Stock-analysis Jupyter notebooks — exploratory work in pandas / yfinance
+    with visual diagnostics.
+  url: https://github.com/Sujin-Arin-DataWorld/finance
+  tools:
+    - python
+    - jupyter
+    - pandas
+    - finance
+  featured: true

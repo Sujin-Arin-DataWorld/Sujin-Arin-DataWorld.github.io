@@ -1,58 +1,87 @@
 ---
 layout: default
-title: "Sujin's Data World"
+title: "Sujin Park · Data Analyst"
+description: "Public-sector dashboards, AI-powered SaaS, and multilingual tools — built with Python, TypeScript, and open data."
 ---
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
-        text-align: center;
-    }
-    .container {
-        padding: 50px;
-    }
-    .profile-pic {
-        width: 200px;
-        border-radius: 50%;
-        box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-    }
-    .intro {
-        font-size: 18px;
-        max-width: 600px;
-        margin: 20px auto;
-    }
-    .button {
-        display: inline-block;
-        margin: 10px;
-        padding: 10px 20px;
-        font-size: 16px;
-        color: white;
-        background-color: #007bff;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: 0.3s;
-    }
-    .button:hover {
-        background-color: #0056b3;
-    }
-</style>
+<section class="hero">
+  <div class="row align-items-center">
+    <div class="col-lg-8">
+      <div class="hero-eyebrow">Data Analyst · open to EU positions</div>
+      <h1 class="hero-title text-themed">
+        I turn open data into<br>decisions people can act on.
+      </h1>
+      <p class="hero-lede text-muted">
+        Currently building a Wiesbaden citizen-dashboard (5 languages, OSM + open data),
+        a Claude-Vision-powered receipt-to-bookkeeping SaaS for German GmbHs,
+        and a multilingual skincare recommendation engine.
+      </p>
 
-<div class="container">
-    <!-- 프로필 사진 -->
-    <img src="assets/images/profile.png" alt="Sujin's Profile Picture" class="profile-pic">
-    <!-- 자기소개 -->
-    <h1>Hi, I'm Sujin! 👋</h1>
-    <p class="intro">
-        🚀 Welcome to my portfolio! I'm Sujin, a data analyst with a strong passion for finance, machine learning, and data visualization.
-        I specialize in transforming raw data into actionable insights that drive business decisions. 
-        Explore my projects and see how data can tell powerful stories!
-    </p>
+      <div class="hero-meta text-muted">
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Germany</span>
+        <span class="meta-item"><i class="fas fa-language"></i> KO · EN · DE</span>
+        <span class="meta-item"><i class="fas fa-envelope"></i>
+          <a href="mailto:{{ site.author.email }}" class="text-themed">{{ site.author.email }}</a>
+        </span>
+      </div>
 
-    <!-- 네비게이션 버튼 -->
-    <div>
-        <a href="/about" class="button">About Me</a>
-        <a href="/portfolio" class="button">Projects</a>
-        <a href="/blog" class="button">Blog</a>
+      <div>
+        <a href="{{ '/projects/' | relative_url }}" class="btn-cta btn-primary-cta">
+          See projects <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="{{ '/about/' | relative_url }}" class="btn-cta btn-ghost">
+          About me
+        </a>
+      </div>
     </div>
+
+    <div class="col-lg-4 text-center d-none d-lg-block">
+      <div id="container">
+        <div id="dummy"></div>
+        <div id="element">
+          <img src="{{ site.author.image | relative_url }}"
+               alt="{{ site.author.name }}"
+               class="circle-image wow animated zoomIn" data-wow-delay=".1s">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<h2 class="section-heading text-themed">Selected work</h2>
+
+<div class="card-columns">
+  {% for project in site.data.projects %}
+    {% if project.featured %}
+      <div class="wow animated fadeIn" data-wow-delay=".15s">
+        <a href="{{ project.live | default: project.url }}"
+           target="_blank" rel="noopener"
+           class="project card text-themed">
+          <div class="card-body">
+            <h5 class="card-title">
+              <i class="fab fa-github"></i>&nbsp; {{ project.name }}
+              {% if project.live %}
+                <i class="fas fa-external-link-alt ml-1" style="font-size:.75rem;opacity:.5"></i>
+              {% endif %}
+            </h5>
+            <p class="card-text">{{ project.description }}</p>
+            <p class="card-text">
+              {% for tool in project.tools %}
+                <span class="badge border">{{ tool }}</span>
+              {% endfor %}
+              {% if project.live %}
+                <span class="badge border">live demo</span>
+              {% endif %}
+            </p>
+          </div>
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<div class="text-center mt-4">
+  <a href="{{ '/projects/' | relative_url }}" class="btn-cta btn-ghost">
+    All projects <i class="fas fa-arrow-right"></i>
+  </a>
 </div>
