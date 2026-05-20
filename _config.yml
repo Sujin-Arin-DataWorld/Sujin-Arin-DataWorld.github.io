@@ -52,6 +52,10 @@ collections:
 defaults:
   - scope:
       path: ""
+    values:
+      image: /assets/images/profile.jpg
+  - scope:
+      path: ""
       type: "projects"
     values:
       layout: "page"
